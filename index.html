@@ -44,6 +44,42 @@
       text-align: center;
     }
 
+    .lang-switcher {
+      display: flex;
+      gap: 0;
+      margin-bottom: 36px;
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+
+    .lang-tab {
+      padding: 8px 22px;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      cursor: pointer;
+      background: var(--card);
+      color: var(--muted);
+      border: none;
+      transition: all 0.25s;
+      outline: none;
+    }
+
+    .lang-tab:first-child {
+      border-right: 1px solid var(--border);
+    }
+
+    .lang-tab.active {
+      background: var(--gold);
+      color: var(--bg);
+    }
+
+    .lang-tab:not(.active):hover {
+      background: var(--gold-soft);
+      color: var(--text);
+    }
+
     .glow {
       width: 120px;
       height: 120px;
@@ -77,7 +113,7 @@
       font-weight: 300;
     }
 
-    .tagline-tr {
+    .tagline-sub {
       font-size: 14px;
       color: var(--muted);
       opacity: 0.7;
@@ -201,37 +237,52 @@
       .glow img {
         border-radius: 22px;
       }
+
+      .lang-tab {
+        padding: 7px 18px;
+        font-size: 12px;
+      }
     }
   </style>
 </head>
 
 <body>
 
+  <div class="lang-switcher">
+    <button class="lang-tab active" data-lang="en" onclick="setLang('en')">EN</button>
+    <button class="lang-tab" data-lang="tr" onclick="setLang('tr')">TR</button>
+  </div>
+
   <div class="glow"><img src="/logo.png" alt="QALB Logo"></div>
 
   <h1>QALB</h1>
-  <p class="tagline">Return to Your Heart</p>
-  <p class="tagline-tr">Kalbine Dönüş</p>
+  <p class="tagline" id="tagline">Return to Your Heart</p>
+  <p class="tagline-sub" id="tagline-sub">Kalbine Dönüş</p>
 
-  <div class="features">
-    <div class="feature"><span>🧘</span> 12 Guided Meditations</div>
-    <div class="feature"><span>📿</span> Dhikr Counter</div>
-    <div class="feature"><span>✨</span> 99 Esma Library</div>
-    <div class="feature"><span>🌙</span> Spiritual Guidance</div>
-    <div class="feature"><span>🫁</span> Breath Sessions</div>
-    <div class="feature"><span>🔒</span> Privacy First</div>
+  <div class="features" id="features">
+    <div class="feature"><span>🧘</span> <span data-en="12 Guided Meditations" data-tr="12 Rehberli Meditasyon">12
+        Guided Meditations</span></div>
+    <div class="feature"><span>📿</span> <span data-en="Dhikr Counter" data-tr="Zikir Sayacı">Dhikr Counter</span></div>
+    <div class="feature"><span>✨</span> <span data-en="99 Esma Library" data-tr="99 Esma Kütüphanesi">99 Esma
+        Library</span></div>
+    <div class="feature"><span>🌙</span> <span data-en="Spiritual Guidance" data-tr="Manevi Rehberlik">Spiritual
+        Guidance</span></div>
+    <div class="feature"><span>🫁</span> <span data-en="Breath Sessions" data-tr="Nefes Seansları">Breath
+        Sessions</span></div>
+    <div class="feature"><span>🔒</span> <span data-en="Privacy First" data-tr="Gizlilik Öncelikli">Privacy First</span>
+    </div>
   </div>
 
   <div class="store-badges">
     <a href="#" class="store-badge">
       <div>
-        <span class="label">Download on the</span>
+        <span class="label" data-en="Download on the" data-tr="İndir">Download on the</span>
         <span class="name">App Store</span>
       </div>
     </a>
     <a href="#" class="store-badge">
       <div>
-        <span class="label">Get it on</span>
+        <span class="label" data-en="Get it on" data-tr="İndir">Get it on</span>
         <span class="name">Google Play</span>
       </div>
     </a>
@@ -240,15 +291,55 @@
   <div class="divider"></div>
 
   <div class="links">
-    <a href="/privacy.html">Privacy Policy</a>
-    <a href="/terms.html">Terms of Use</a>
+    <a href="/privacy.html" data-en="Privacy Policy" data-tr="Gizlilik Politikası">Privacy Policy</a>
+    <a href="/terms.html" data-en="Terms of Use" data-tr="Kullanım Koşulları">Terms of Use</a>
     <a href="/kvkk.html">KVKK</a>
-    <a href="mailto:qalbiletisim@gmail.com">Contact</a>
+    <a href="mailto:qalbiletisim@gmail.com" data-en="Contact" data-tr="İletişim">Contact</a>
   </div>
 
   <div class="footer">
     <p>QALB &copy; 2026 &middot; <a href="mailto:qalbiletisim@gmail.com">qalbiletisim@gmail.com</a></p>
   </div>
+
+  <script>
+    var i18n = {
+      en: {
+        title: 'QALB — Return to Your Heart',
+        tagline: 'Return to Your Heart',
+        taglineSub: 'Kalbine Dönüş'
+      },
+      tr: {
+        title: 'QALB — Kalbine Dönüş',
+        tagline: 'Kalbine Dönüş',
+        taglineSub: 'Return to Your Heart'
+      }
+    };
+
+    function setLang(lang) {
+      var data = i18n[lang];
+      document.documentElement.lang = lang;
+      document.title = data.title;
+      document.getElementById('tagline').textContent = data.tagline;
+      document.getElementById('tagline-sub').textContent = data.taglineSub;
+
+      document.querySelectorAll('[data-' + lang + ']').forEach(function (el) {
+        el.textContent = el.getAttribute('data-' + lang);
+      });
+
+      document.querySelectorAll('.lang-tab').forEach(function (tab) {
+        tab.classList.toggle('active', tab.getAttribute('data-lang') === lang);
+      });
+
+      try { history.replaceState(null, '', '#' + lang); } catch (e) { }
+    }
+
+    (function () {
+      var hash = location.hash.replace('#', '');
+      if (hash === 'tr' || hash === 'en') { setLang(hash); return; }
+      var browserLang = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
+      setLang(browserLang.startsWith('tr') ? 'tr' : 'en');
+    })();
+  </script>
 
 </body>
 
