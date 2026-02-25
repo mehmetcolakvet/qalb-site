@@ -1,33 +1,144 @@
 <!DOCTYPE html>
 <html lang="tr">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>QALB – KVKK Aydınlatma Metni</title>
+  <title>Deruni – KVKK Aydınlatma Metni</title>
   <style>
-    :root { --bg: #0A1628; --card: #111D30; --gold: #C9A84C; --text: #E8E4DC; --muted: #8A9AB5; --border: rgba(255,255,255,0.08); }
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { background: var(--bg); color: var(--text); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.7; padding: 24px 16px 64px; max-width: 720px; margin: 0 auto; }
-    .lang-switch { text-align: right; margin-bottom: 24px; }
-    .lang-switch a { color: var(--gold); text-decoration: none; font-size: 14px; padding: 6px 12px; border: 1px solid var(--border); border-radius: 8px; cursor: pointer; }
-    .lang-switch a:hover { background: rgba(201,168,76,0.1); }
-    .logo { text-align: center; margin-bottom: 32px; }
-    .logo img { width: 72px; height: 72px; border-radius: 18px; margin-bottom: 12px; }
-    .logo h1 { color: var(--gold); font-size: 28px; letter-spacing: 2px; }
-    .logo p { color: var(--muted); font-size: 13px; margin-top: 4px; }
-    h2 { color: var(--gold); font-size: 18px; margin: 28px 0 12px; }
-    h3 { color: var(--text); font-size: 15px; margin: 20px 0 8px; }
-    p, li { font-size: 14px; color: var(--muted); margin-bottom: 8px; }
-    ul { padding-left: 20px; }
-    .section { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 20px; margin-bottom: 16px; }
-    .footer { text-align: center; margin-top: 48px; color: var(--muted); font-size: 12px; border-top: 1px solid var(--border); padding-top: 24px; }
-    .footer .links { margin-bottom: 12px; }
-    .footer .links a { color: var(--muted); text-decoration: none; margin: 0 12px; font-size: 13px; }
-    .footer .links a:hover { color: var(--gold); }
-    a { color: var(--gold); }
-    .hidden { display: none; }
+    :root {
+      --bg: #0A1628;
+      --card: #111D30;
+      --gold: #C9A84C;
+      --text: #E8E4DC;
+      --muted: #8A9AB5;
+      --border: rgba(255, 255, 255, 0.08);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      line-height: 1.7;
+      padding: 24px 16px 64px;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .lang-switch {
+      text-align: right;
+      margin-bottom: 24px;
+    }
+
+    .lang-switch a {
+      color: var(--gold);
+      text-decoration: none;
+      font-size: 14px;
+      padding: 6px 12px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .lang-switch a:hover {
+      background: rgba(201, 168, 76, 0.1);
+    }
+
+    .logo {
+      text-align: center;
+      margin-bottom: 32px;
+    }
+
+    .logo img {
+      width: 72px;
+      height: 72px;
+      border-radius: 18px;
+      margin-bottom: 12px;
+    }
+
+    .logo h1 {
+      color: var(--gold);
+      font-size: 28px;
+      letter-spacing: 2px;
+    }
+
+    .logo p {
+      color: var(--muted);
+      font-size: 13px;
+      margin-top: 4px;
+    }
+
+    h2 {
+      color: var(--gold);
+      font-size: 18px;
+      margin: 28px 0 12px;
+    }
+
+    h3 {
+      color: var(--text);
+      font-size: 15px;
+      margin: 20px 0 8px;
+    }
+
+    p,
+    li {
+      font-size: 14px;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    .section {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 16px;
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 48px;
+      color: var(--muted);
+      font-size: 12px;
+      border-top: 1px solid var(--border);
+      padding-top: 24px;
+    }
+
+    .footer .links {
+      margin-bottom: 12px;
+    }
+
+    .footer .links a {
+      color: var(--muted);
+      text-decoration: none;
+      margin: 0 12px;
+      font-size: 13px;
+    }
+
+    .footer .links a:hover {
+      color: var(--gold);
+    }
+
+    a {
+      color: var(--gold);
+    }
+
+    .hidden {
+      display: none;
+    }
   </style>
 </head>
+
 <body>
   <div class="lang-switch">
     <a onclick="switchLang('tr')" id="btn-tr">Türkçe</a>
@@ -35,8 +146,8 @@
   </div>
 
   <div class="logo">
-    <img src="/logo.png" alt="QALB Logo">
-    <h1>QALB</h1>
+    <img src="/logo.png" alt="Deruni Logo">
+    <h1>DERUNİ</h1>
     <p id="page-subtitle">KVKK Aydınlatma Metni</p>
   </div>
 
@@ -45,12 +156,13 @@
     <div class="section">
       <h2>KVKK Aydınlatma Metni</h2>
       <p>Son güncelleme: 23 Şubat 2026</p>
-      <p>6698 sayılı Kişisel Verilerin Korunması Kanunu ("KVKK") kapsamında, veri sorumlusu sıfatıyla QALB Uygulaması olarak kişisel verilerinizin işlenmesine ilişkin bilgilendirme yapmak isteriz.</p>
+      <p>6698 sayılı Kişisel Verilerin Korunması Kanunu ("KVKK") kapsamında, veri sorumlusu sıfatıyla Deruni Uygulaması
+        olarak kişisel verilerinizin işlenmesine ilişkin bilgilendirme yapmak isteriz.</p>
     </div>
 
     <div class="section">
       <h3>1. Veri Sorumlusu</h3>
-      <p>QALB Uygulaması<br>İletişim: <a href="mailto:qalbiletisim@gmail.com">qalbiletisim@gmail.com</a></p>
+      <p>Deruni Uygulaması<br>İletişim: <a href="mailto:iletisimderuni@gmail.com">iletisimderuni@gmail.com</a></p>
     </div>
 
     <div class="section">
@@ -74,12 +186,14 @@
 
     <div class="section">
       <h3>4. Kişisel Verilerin Aktarımı</h3>
-      <p>Kişisel verileriniz üçüncü taraflara satılmaz. Anonim kullanım verileri yalnızca hizmet kalitesini artırmak amacıyla işlenir. Google Gemini API kullanımında yalnızca sizin girdiğiniz metin iletilir.</p>
+      <p>Kişisel verileriniz üçüncü taraflara satılmaz. Anonim kullanım verileri yalnızca hizmet kalitesini artırmak
+        amacıyla işlenir. Google Gemini API kullanımında yalnızca sizin girdiğiniz metin iletilir.</p>
     </div>
 
     <div class="section">
       <h3>5. Kişisel Verilerin Saklanma Süresi</h3>
-      <p>Veriler, uygulama kullanımınız süresince cihazınızda saklanır. Uygulamayı sildiğinizde veya "Verileri Sıfırla" özelliğini kullandığınızda tüm veriler silinir.</p>
+      <p>Veriler, uygulama kullanımınız süresince cihazınızda saklanır. Uygulamayı sildiğinizde veya "Verileri Sıfırla"
+        özelliğini kullandığınızda tüm veriler silinir.</p>
     </div>
 
     <div class="section">
@@ -92,14 +206,16 @@
         <li>Yurt içinde veya yurt dışında aktarıldığı üçüncü kişileri bilme</li>
         <li>Eksik veya yanlış işlenmişse düzeltilmesini isteme</li>
         <li>Silinmesini veya yok edilmesini isteme</li>
-        <li>İşlemenin otomatik sistemler vasıtasıyla yapılması halinde aleyhinize bir sonucun ortaya çıkmasına itiraz etme</li>
+        <li>İşlemenin otomatik sistemler vasıtasıyla yapılması halinde aleyhinize bir sonucun ortaya çıkmasına itiraz
+          etme</li>
         <li>Kanuna aykırı işleme nedeniyle zarara uğramanız halinde zararın giderilmesini talep etme</li>
       </ul>
     </div>
 
     <div class="section">
       <h3>7. Başvuru Yolu</h3>
-      <p>Haklarınızı kullanmak için <a href="mailto:qalbiletisim@gmail.com">qalbiletisim@gmail.com</a> adresine yazabilirsiniz. Başvurular 30 gün içinde yanıtlanır.</p>
+      <p>Haklarınızı kullanmak için <a href="mailto:iletisimderuni@gmail.com">iletisimderuni@gmail.com</a> adresine
+        yazabilirsiniz. Başvurular 30 gün içinde yanıtlanır.</p>
     </div>
   </div>
 
@@ -108,12 +224,13 @@
     <div class="section">
       <h2>Data Protection Notice (GDPR)</h2>
       <p>Last updated: February 23, 2026</p>
-      <p>QALB respects your privacy. This notice explains how we handle personal data in accordance with GDPR and applicable data protection laws.</p>
+      <p>Deruni respects your privacy. This notice explains how we handle personal data in accordance with GDPR and
+        applicable data protection laws.</p>
     </div>
 
     <div class="section">
       <h3>1. Data Controller</h3>
-      <p>QALB Uygulaması<br>Contact: <a href="mailto:qalbiletisim@gmail.com">qalbiletisim@gmail.com</a></p>
+      <p>Deruni Uygulaması<br>Contact: <a href="mailto:iletisimderuni@gmail.com">iletisimderuni@gmail.com</a></p>
     </div>
 
     <div class="section">
@@ -137,12 +254,14 @@
 
     <div class="section">
       <h3>4. Data Transfers</h3>
-      <p>Your personal data is not sold to third parties. Anonymous usage data is processed solely to improve service quality. When using the Google Gemini API, only the text you enter is transmitted.</p>
+      <p>Your personal data is not sold to third parties. Anonymous usage data is processed solely to improve service
+        quality. When using the Google Gemini API, only the text you enter is transmitted.</p>
     </div>
 
     <div class="section">
       <h3>5. Retention Period</h3>
-      <p>Data is stored on your device for the duration of your app usage. All data is deleted when you uninstall the app or use the "Reset Data" feature.</p>
+      <p>Data is stored on your device for the duration of your app usage. All data is deleted when you uninstall the
+        app or use the "Reset Data" feature.</p>
     </div>
 
     <div class="section">
@@ -160,7 +279,8 @@
 
     <div class="section">
       <h3>7. How to Exercise Your Rights</h3>
-      <p>Write to <a href="mailto:qalbiletisim@gmail.com">qalbiletisim@gmail.com</a>. Requests will be responded to within 30 days.</p>
+      <p>Write to <a href="mailto:iletisimderuni@gmail.com">iletisimderuni@gmail.com</a>. Requests will be responded to
+        within 30 days.</p>
     </div>
   </div>
 
@@ -171,7 +291,7 @@
       <a href="/terms.html">Terms of Use</a>
       <a href="/kvkk.html">KVKK</a>
     </div>
-    <p>QALB &copy; 2026 &middot; <a href="mailto:qalbiletisim@gmail.com">qalbiletisim@gmail.com</a></p>
+    <p>Deruni &copy; 2026 &middot; <a href="mailto:iletisimderuni@gmail.com">iletisimderuni@gmail.com</a></p>
   </div>
 
   <script>
@@ -185,4 +305,5 @@
     switchLang('tr');
   </script>
 </body>
+
 </html>
