@@ -1,347 +1,1059 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="tr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Deruni — Return to Your Heart</title>
-  <meta name="description"
-    content="Deruni is a mindful dhikr and meditation app for spiritual awareness and emotional balance. Available on App Store and Google Play.">
-  <meta property="og:title" content="Deruni — Return to Your Heart">
-  <meta property="og:description"
-    content="Guided meditations, dhikr counter, 99 Esma library, and personalized spiritual guidance.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://deruni.app">
-  <link rel="icon" type="image/png" href="/logo.png">
-  <meta property="og:image" content="https://deruni.app/logo.png">
-  <style>
-    :root {
-      --bg: #0A1628;
-      --card: #111D30;
-      --gold: #C9A84C;
-      --gold-soft: rgba(201, 168, 76, 0.15);
-      --text: #E8E4DC;
-      --muted: #8A9AB5;
-      --border: rgba(255, 255, 255, 0.08);
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Deruni — Kalbine Dönüş · Zikir, nefes ve Esmâ-ül Hüsnâ</title>
+<meta name="description" content="Deruni; bir dakika nefes, bir Esma ve kısa bir tefekkür için sade bir alan. Hesap yok, kayıt yok, giriş yok. iOS ve Android&#x27;de ücretsiz.">
+<link rel="canonical" href="https://deruni.app/">
+<link rel="alternate" hreflang="tr" href="https://deruni.app/">
+<link rel="alternate" hreflang="en" href="https://deruni.app/en/">
+<link rel="alternate" hreflang="x-default" href="https://deruni.app/">
+<meta property="og:site_name" content="Deruni">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://deruni.app/">
+<meta property="og:title" content="Deruni — Kalbine Dönüş">
+<meta property="og:description" content="Yirmi bir günün tamamı açıkta. Bir dakika nefesi burada deneyebilir, on altı ilahiyi indirmeden dinleyebilirsin. Hesapsız, ücretsiz.">
+<meta property="og:image" content="https://deruni.app/assets/og-tr.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Deruni — Kalbine dön.">
+<meta property="og:locale" content="tr_TR">
+<meta property="og:locale:alternate" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Deruni — Kalbine Dönüş">
+<meta name="twitter:description" content="Yirmi bir günün tamamı açıkta. Bir dakika nefesi burada deneyebilir, on altı ilahiyi indirmeden dinleyebilirsin. Hesapsız, ücretsiz.">
+<meta name="twitter:image" content="https://deruni.app/assets/og-tr.png">
+<meta name="twitter:image:alt" content="Deruni — Kalbine dön.">
+<meta name="theme-color" content="#0B1E39">
+<meta name="color-scheme" content="dark">
+<link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon-96.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<script>document.documentElement.className+=" js";</script>
+<style>
+:root{
+  --bg:#0B1E39; --band:#0D1B31; --card:#111A30; --card-lift:#16223C;
+  --gold:#C2A878; --gold-soft:#D7C39A;
+  --text:#F4EFE6; --muted:#B8C4D8; --border:#1F2942;
+  --hair:rgba(244,239,230,.08);
+  --chip-bg:rgba(244,239,230,.07); --chip-bd:rgba(244,239,230,.22);
+  --gold-12:rgba(194,168,120,.12); --gold-28:rgba(194,168,120,.28);
+  --r-s:10px; --r-m:14px; --r-l:18px; --r-xl:22px;
+  --w-text:64ch; --w-page:1100px; --w-map:1180px; --w-narrow:720px;
+  --serif:ui-serif,Georgia,"Times New Roman",serif;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  --arabic:"SF Arabic","Geeza Pro","Noto Naskh Arabic","Segoe UI",serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+/* display bildiren her sınıf UA'nın [hidden] kuralını ezer — dil filtresi buna takılmıştı. */
+[hidden]{display:none!important}
+html{color-scheme:dark;scroll-behavior:smooth;scroll-padding-top:76px;-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--text);font:400 17px/1.72 var(--sans);text-wrap:pretty;hyphens:none;padding-bottom:76px;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--gold-soft);outline-offset:3px;border-radius:4px}
+::selection{background:var(--gold-28);color:var(--text)}
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+.wrap{max-width:var(--w-page);margin:0 auto;padding:0 20px}
+@media(min-width:640px){.wrap{padding:0 32px}}
+main>section{padding:clamp(40px,5.5vw,72px) 0}
+.band{background:var(--band)}
+.sub{margin-top:clamp(36px,5vw,56px);padding-top:clamp(36px,5vw,56px);border-top:1px solid var(--hair)}
+.sub h2{font-size:clamp(23px,3vw,32px)}
+h1,h2{font-family:var(--serif);font-weight:600;letter-spacing:-.015em}
+h1{font-size:clamp(36px,6.4vw,60px);line-height:1.08}
+h2{font-size:clamp(26px,3.8vw,40px);line-height:1.18}
+h3{font:600 19px/1.35 var(--sans);letter-spacing:0}
+.over{font:500 12px/1 var(--sans);letter-spacing:.18em;color:var(--gold);margin-bottom:20px}
+.lead{font-size:clamp(17px,2.1vw,20px);line-height:1.62;color:var(--muted);max-width:46ch}
+p{max-width:var(--w-text)}
+.sm{font-size:14px;line-height:1.6}
+.mi{font-size:13px;line-height:1.55;color:var(--muted)}
+.mu{color:var(--muted)}
+.gs{color:var(--gold-soft)}
+.esma{font:600 15px/1 var(--sans);letter-spacing:.14em;color:var(--gold)}
+.daynum{font:400 11px/1 var(--sans);letter-spacing:.2em;color:var(--muted)}
+.invite{font-family:var(--serif);font-size:clamp(22px,3.2vw,32px);line-height:1.5;color:var(--gold-soft);max-width:54ch;margin:0 auto;text-align:center}
+.ar{font-family:var(--arabic);font-size:1.06em;line-height:1.9}
 
-    body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 40px 20px;
-      text-align: center;
-    }
+.chip{display:inline-block;font:500 10px/1 var(--sans);letter-spacing:.14em;padding:5px 10px;border-radius:999px;background:var(--chip-bg);border:1px solid var(--chip-bd);color:var(--text);white-space:nowrap;vertical-align:middle}
 
-    .lang-switcher {
-      display: flex;
-      gap: 0;
-      margin-bottom: 36px;
-      border-radius: 10px;
-      overflow: hidden;
-      border: 1px solid var(--border);
-    }
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:0 22px;border-radius:999px;font:600 15px/1 var(--sans);text-decoration:none;border:1px solid transparent;transition:background .18s,border-color .18s,color .18s;cursor:pointer}
+.btn-p{background:var(--gold);color:#0B1E39}
+.btn-p:hover{background:var(--gold-soft)}
+.btn-s{border-color:var(--chip-bd);color:var(--text);background:transparent}
+.btn-s:hover{border-color:var(--gold);background:var(--gold-12)}
+.btns{display:flex;flex-wrap:wrap;gap:12px;margin:28px 0 14px}
 
-    .lang-tab {
-      padding: 8px 22px;
-      font-size: 13px;
-      font-weight: 600;
-      letter-spacing: 1px;
-      cursor: pointer;
-      background: var(--card);
-      color: var(--muted);
-      border: none;
-      transition: all 0.25s;
-      outline: none;
-    }
+.topbar{position:sticky;top:0;z-index:50;height:56px;background:rgba(11,30,57,.86);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--border)}
+.topbar .wrap{height:100%;display:flex;align-items:center;justify-content:space-between;gap:14px}
+.brand{display:flex;align-items:center;min-height:44px;gap:10px;font:600 14px/1 var(--sans);letter-spacing:.16em;text-decoration:none;color:var(--text)}
+.brand img{width:26px;height:26px;border-radius:7px}
+.tnav{display:flex;align-items:center;gap:14px;font-size:14px}
+.tnav a{display:inline-flex;align-items:center;min-height:44px;padding:0 4px;text-decoration:none;color:var(--muted);transition:color .18s}
+.tnav a:hover,.tnav a[aria-current]{color:var(--text)}
+.tnav .sep{color:var(--border)}
+.tnav .dl{color:var(--gold)}
+.tnav .hy{color:var(--text)}
+@media(max-width:399px){.tnav{gap:8px}.tnav a{padding:0 2px}}
+@media(max-width:359px){.tnav .sep{display:none}}
 
-    .lang-tab:first-child {
-      border-right: 1px solid var(--border);
-    }
+.skip{position:absolute;left:-9999px;top:0;background:var(--card-lift);color:var(--text);padding:12px 18px;border-radius:0 0 var(--r-s) 0;z-index:60}
+.skip:focus{left:0}
 
-    .lang-tab.active {
-      background: var(--gold);
-      color: var(--bg);
-    }
+.hero{padding-top:clamp(40px,6vw,72px)}
+.hero-grid{display:grid;gap:28px;align-items:center}
+@media(min-width:900px){.hero-grid{grid-template-columns:1.08fr .92fr;gap:56px}}
+.hero h1{margin:6px 0 20px}
+.trust{font-size:15px;line-height:1.6;color:var(--muted);max-width:44ch}
+.hero .offl{margin-top:10px}
+.tolink{display:inline-block;margin-top:22px;color:var(--gold);text-decoration:none;font-size:15px;border-bottom:1px solid var(--gold-28);padding-bottom:2px}
+.tolink:hover{border-color:var(--gold)}
+.figw{display:flex;flex-direction:column;align-items:center;gap:14px}
+.phone{width:min(300px,56vw);aspect-ratio:1206/2622;padding:8px;border-radius:44px;background:linear-gradient(160deg,#1A2438,#0C1728);border:1px solid var(--border);box-shadow:0 30px 70px -34px rgba(0,0,0,.85),inset 0 1px 0 rgba(255,255,255,.06)}
+.phone img{width:100%;height:100%;object-fit:cover;border-radius:36px}
+.phone.crop{aspect-ratio:1206/1460}
+.phone.crop img{object-position:top}
+.cap{font-size:13px;color:var(--muted);text-align:center}
 
-    .lang-tab:not(.active):hover {
-      background: var(--gold-soft);
-      color: var(--text);
-    }
+.breath-wrap{display:flex;flex-direction:column;align-items:center;text-align:center;gap:22px}
+.breath-wrap p{max-width:52ch}
+.ring{width:200px;height:200px;border-radius:50%;border:1px solid rgba(194,168,120,.35);box-shadow:inset 0 0 0 12px var(--gold-12);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;transition:opacity .6s ease}
+@media(max-width:640px){.ring{width:168px;height:168px}}
+.ring.run{animation:brth 10s infinite}
+@keyframes brth{0%{transform:scale(1)}40%{transform:scale(1.26)}60%{transform:scale(1.26)}100%{transform:scale(1)}}
+.phase{font:600 18px/1 var(--sans);letter-spacing:.04em}
+.count{font:400 14px/1 var(--sans);color:var(--muted);font-variant-numeric:tabular-nums}
+.done{margin-top:6px}
+.done .h{font-family:var(--serif);font-size:21px;line-height:1.45;color:var(--gold-soft)}
+.canon{font-size:14px;font-style:italic;color:var(--muted)}
 
-    .glow {
-      width: 120px;
-      height: 120px;
-      border-radius: 28px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto 32px;
-      box-shadow: 0 0 60px rgba(201, 168, 76, 0.3), 0 0 120px rgba(201, 168, 76, 0.1);
-    }
+.mapinvite{margin:28px 0 32px}
+.map{display:grid;gap:28px;max-width:var(--w-map);margin:0 auto}
+@media(min-width:700px){.map{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1040px){.map{grid-template-columns:repeat(3,1fr)}}
+.path{position:relative;padding-left:14px;min-width:0}
+@media(max-width:699px){.path{padding-left:10px}}
+.path:before{content:"";position:absolute;left:0;top:6px;bottom:6px;width:2px;background:linear-gradient(180deg,var(--gold-28) 0%,rgba(194,168,120,.06) 100%);transform:scaleY(0);transform-origin:top;transition:transform .7s cubic-bezier(.22,.61,.36,1)}
+.path.vis:before{transform:scaleY(1)}
+.path h3{font-family:var(--serif);font-size:22px;font-weight:600;line-height:1.25;margin-bottom:8px}
+.path .psub{font-size:15px;line-height:1.55;color:var(--muted)}
+.phead{margin-bottom:12px}
+@media(min-width:700px){.phead{min-height:140px}}
+.days{list-style:none;display:flex;flex-direction:column;gap:8px}
+.day{display:grid;grid-template-columns:auto 1fr max-content;grid-template-areas:"n e c" "n t t";column-gap:12px;row-gap:4px;align-items:center;background:var(--card);border:1px solid var(--border);border-radius:var(--r-m);padding:10px 12px;transition:border-color .18s,background .18s}
+.day:hover{border-color:var(--chip-bd);background:var(--card-lift)}
+.day .top{display:contents}
+.day .daynum{grid-area:n}
+.day .chip{grid-area:c}
+.day .esma{grid-area:e}
+.day .ttl{grid-area:t;font-size:15px;line-height:1.35;margin:0}
+@media(max-width:359px){.day .chip{padding:4px 7px;letter-spacing:.06em}}
+.pnote{margin-top:14px;padding:12px 14px;border:1px solid var(--border);border-radius:var(--r-s);font-size:13px;line-height:1.55;color:var(--muted)}
+.pframe{font-size:13px;line-height:1.55;color:var(--muted);margin-top:12px}
+.measure{max-width:var(--w-map);margin:24px auto 0}
+.emph{font-size:16px;margin-top:10px}
 
-    .glow img {
-      width: 100%;
-      height: 100%;
-      border-radius: 28px;
-      object-fit: cover;
-    }
+.day-grid{display:grid;gap:28px;align-items:start}
+@media(min-width:900px){.day-grid{grid-template-columns:1.15fr .85fr;gap:56px}.day-grid .figw{position:sticky;top:92px}}
+.quote{border-left:2px solid var(--gold-28);padding:4px 0 4px 18px;margin:24px 0 32px;font-family:var(--serif);font-size:19px;line-height:1.6;color:var(--gold-soft);max-width:56ch}
+.steps{list-style:none;display:flex;flex-direction:column;gap:22px;counter-reset:s}
+.steps li{padding-left:44px;position:relative}
+.steps li:before{counter-increment:s;content:counter(s,decimal-leading-zero);position:absolute;left:0;top:2px;font:500 12px/1 var(--sans);letter-spacing:.14em;color:var(--gold)}
+.steps h3{font:600 17px/1.35 var(--sans);margin-bottom:5px}
+.steps p{font-size:16px;line-height:1.65;color:var(--muted);max-width:52ch}
 
-    h1 {
-      font-size: 48px;
-      font-weight: 700;
-      color: var(--gold);
-      letter-spacing: 6px;
-      margin-bottom: 12px;
-    }
+.cards{display:grid;gap:clamp(12px,1.6vw,20px)}
+@media(min-width:900px){
+ .cards{grid-template-columns:repeat(3,1fr)}
+ .c1{grid-area:1/1/2/3}.c6{grid-area:1/3/2/4}
+ .c3{grid-area:2/1/3/2}.c4{grid-area:2/2/3/4}
+ .c2{grid-area:3/1/4/2}.c5{grid-area:3/2/4/4}
+}
+.card{background:var(--card);border:1px solid var(--border);border-radius:var(--r-l);padding:clamp(20px,2.4vw,26px)}
+.card h3{margin-bottom:10px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.card p{font-size:16px;line-height:1.65;color:var(--muted);max-width:56ch}
+.card .q{margin-top:14px;font-family:var(--serif);font-size:17px;line-height:1.5;color:var(--gold-soft)}
+.c1-in{display:grid;gap:24px;align-items:center}
+@media(min-width:900px){.c1-in{grid-template-columns:1fr auto}}
+.c1-in .phone{width:min(200px,44vw)}
+.mlist{margin-top:16px;font-size:15px;line-height:1.9;color:var(--muted)}
 
-    .tagline {
-      font-size: 18px;
-      color: var(--muted);
-      margin-bottom: 8px;
-      font-weight: 300;
-    }
+.priv{background:linear-gradient(180deg,#0D2140,var(--bg))}
+.facts{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:22px 0;max-width:660px}
+@media(max-width:399px){.facts{grid-template-columns:1fr}}
+.fact{display:flex;align-items:center;gap:10px;padding:10px 12px;background:var(--card);border:1px solid var(--border);border-radius:var(--r-s);font-size:14px}
+.fact svg{flex:none;color:var(--gold)}
+.plist{list-style:none;display:flex;flex-direction:column;gap:8px;margin:20px 0;max-width:60ch}
+.plist li{padding-left:24px;position:relative;font-size:16px;line-height:1.6}
+.plist li:before{content:"";position:absolute;left:0;top:11px;width:8px;height:1px;background:var(--gold)}
 
-    .tagline-sub {
-      font-size: 14px;
-      color: var(--muted);
-      opacity: 0.7;
-      margin-bottom: 40px;
-      font-style: italic;
-    }
+.ledger{display:grid;gap:24px;max-width:940px;margin:0 auto}
+@media(min-width:700px){.ledger{grid-template-columns:1fr 1fr}}
+.led{border:1px solid var(--border);border-radius:var(--r-l);padding:clamp(20px,2.4vw,26px);background:var(--card)}
+.led.free{background:var(--card-lift);border-color:rgba(244,239,230,.18)}
+.led h3{margin-bottom:14px}
+.led .top{font-size:15px;line-height:1.65;color:var(--muted);margin-bottom:18px}
+.led ul{list-style:none;display:flex;flex-direction:column;gap:8px}
+.led li{padding-left:22px;position:relative;font-size:16px;line-height:1.55}
+.led li:before{content:"";position:absolute;left:0;top:10px;width:7px;height:1px;background:var(--gold)}
+.led li b{font-weight:600;display:block}
+.led li span{color:var(--muted);font-size:15px}
 
-    .features {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      justify-content: center;
-      max-width: 600px;
-      margin-bottom: 48px;
-    }
+.faqs{max-width:var(--w-narrow);margin:0 auto}
+.faq{border-bottom:1px solid var(--border)}
+.faq:first-child{border-top:1px solid var(--border)}
+.faq summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:56px;padding:12px 0}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary:after{content:"";flex:none;width:10px;height:10px;border-right:1.5px solid var(--gold);border-bottom:1.5px solid var(--gold);transform:rotate(45deg) translateY(-3px);transition:transform .2s}
+.faq[open] summary:after{transform:rotate(225deg) translateY(-3px)}
+.faq summary h3{font:500 18px/1.4 var(--sans);margin:0}
+.faq summary:hover h3{color:var(--gold-soft)}
+.faq p{font-size:16px;line-height:1.72;color:var(--muted);max-width:62ch;padding:0 0 18px}
+.scope{padding:clamp(36px,4.5vw,56px) 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.scope .lbl{font:500 12px/1 var(--sans);letter-spacing:.18em;color:var(--gold);margin-bottom:18px}
+.scope p{font-size:17px;line-height:1.7;max-width:70ch}
+.scope .em{margin-top:16px;font-weight:600}
 
-    .feature {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 12px 20px;
-      font-size: 14px;
-      color: var(--muted);
-    }
+.hymn-top{display:grid;gap:28px;align-items:start}
+.hymn-main{min-width:0}
+@media(min-width:900px){.hymn-top{grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:56px}.hymn-top .figw{position:sticky;top:92px}.hymn-top .phone{width:min(268px,60vw)}}
+.rel{margin-top:32px}
+.hymn-cta{text-align:center;margin-top:32px}
+.tabs{display:flex;gap:8px;margin:16px 0 12px;flex-wrap:wrap}
+.tab{min-height:44px;padding:0 18px;border-radius:999px;background:transparent;border:1px solid var(--chip-bd);color:var(--muted);font:500 15px/1 var(--sans);cursor:pointer;display:inline-flex;align-items:center;transition:all .18s}
+.tab[aria-pressed="true"]{color:var(--text);border-color:var(--gold);background:var(--gold-12)}
+.fam{margin-bottom:14px}
+.famh{font:500 12px/1 var(--sans);letter-spacing:.16em;color:var(--muted);margin-bottom:10px}
+.trk{position:relative;display:flex;align-items:center;gap:14px;width:100%;min-height:56px;padding:10px 14px;background:var(--card);border:1px solid var(--border);border-radius:var(--r-m);color:inherit;font:inherit;text-align:left;cursor:pointer;overflow:hidden;transition:border-color .18s,background .18s}
+.trk:hover{border-color:var(--chip-bd);background:var(--card-lift)}
+.trk+.trk{margin-top:8px}
+.trk .pb{flex:none;width:36px;height:36px;border-radius:50%;border:1px solid var(--gold);display:flex;align-items:center;justify-content:center;color:var(--gold)}
+.trk.load .pb{animation:pulse 1.2s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.45}}
+.trk .meta{flex:1;min-width:0}
+.trk .tt.ar{unicode-bidi:isolate}
+.trk .tt{display:block;font-size:16px;line-height:1.35;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.trk .tl{display:block;font-size:13px;color:var(--muted);margin-top:3px}
+.trk .rt{flex:none;text-align:right;direction:ltr;unicode-bidi:isolate}
+.trk .dur{display:block;font-size:14px;font-variant-numeric:tabular-nums}
+.trk .mb{display:block;font-size:12px;color:var(--muted);margin-top:2px}
+.trk .prog{position:absolute;left:0;bottom:0;height:2px;width:100%;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .25s linear}
+.trk.err{color:var(--muted)}
+.credit{margin-top:8px}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+.vids{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));margin:22px 0 14px}
+.vid{text-decoration:none;display:block;border:1px solid var(--border);border-radius:var(--r-m);overflow:hidden;background:var(--card);transition:border-color .18s}
+.vid:hover{border-color:var(--gold-28)}
+.vid img{width:100%;height:auto;aspect-ratio:16/9;object-fit:cover}
+.vid span{display:block;padding:14px 16px;font-size:15px;line-height:1.45}
+@media(max-width:639px){.vids{grid-template-columns:1fr;gap:10px}.vid{display:grid;grid-template-columns:120px 1fr;align-items:center}.vid span{padding:10px 12px;font-size:14px}}
+.links{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.links a{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 16px;border-radius:999px;border:1px solid var(--chip-bd);text-decoration:none;font-size:15px;color:var(--text);transition:border-color .18s,background .18s}
+.links a:hover{border-color:var(--gold);background:var(--gold-12)}
 
-    .feature span {
-      margin-right: 6px;
-    }
+.close{text-align:center}
+.close h2{margin-bottom:14px}
+.close .btns{justify-content:center}
+.close p{margin:0 auto}
 
-    .store-badges {
-      display: flex;
-      gap: 16px;
-      justify-content: center;
-      margin-bottom: 48px;
-      flex-wrap: wrap;
-    }
+footer{border-top:1px solid var(--border);padding:44px 0 32px;font-size:15px}
+.fgrid{display:grid;gap:24px;grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+.fcol:first-child{grid-column:1/-1}
+@media(min-width:900px){.fgrid{grid-template-columns:1fr 1.2fr 1fr}.fcol:first-child{grid-column:auto}}
+.fcol .fh{font:500 12px/1 var(--sans);letter-spacing:.16em;color:var(--gold);margin-bottom:14px}
+.fcol a{display:flex;align-items:center;min-height:44px;color:var(--muted);text-decoration:none;transition:color .18s;overflow-wrap:anywhere}
+.fcol a:hover{color:var(--text)}
+.fbot{margin-top:28px;padding-top:20px;border-top:1px solid var(--border);display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;font-size:13px;color:var(--muted)}
+.fbot p{max-width:none}
 
-    .store-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 14px 24px;
-      color: var(--text);
-      text-decoration: none;
-      font-size: 15px;
-      transition: all 0.2s;
-    }
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:45;min-height:60px;background:rgba(11,30,57,.92);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-top:1px solid var(--border);padding-bottom:env(safe-area-inset-bottom);opacity:0;visibility:hidden;pointer-events:none;transition:opacity .2s,visibility .2s}
+.bar.on{opacity:1;visibility:visible;pointer-events:auto}
+.bar .wrap{min-height:60px;display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;padding-top:8px;padding-bottom:8px}
+.bar .lt{display:flex;align-items:center;gap:12px;font-size:14px;min-width:0}
+.bar .btn{min-height:40px;padding:0 16px;font-size:14px}
+.bar .np{display:none;align-items:center;gap:10px;min-width:0}
+.bar.play .np{display:flex}
+.bar.play .idle{display:none}
+.bar .np .t{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:40vw}
+.bar .np .tm{font-variant-numeric:tabular-nums;color:var(--muted);font-size:13px;flex:none}
+.iconbtn{width:36px;height:36px;flex:none;border-radius:50%;border:1px solid var(--chip-bd);background:transparent;color:var(--text);display:flex;align-items:center;justify-content:center;cursor:pointer}
+.iconbtn:hover{border-color:var(--gold);color:var(--gold)}
 
-    .store-badge:hover {
-      border-color: var(--gold);
-      background: var(--gold-soft);
-    }
-
-    .store-badge .label {
-      font-size: 11px;
-      color: var(--muted);
-      display: block;
-    }
-
-    .store-badge .name {
-      font-weight: 600;
-      font-size: 16px;
-    }
-
-    .divider {
-      width: 60px;
-      height: 1px;
-      background: var(--border);
-      margin: 0 auto 32px;
-    }
-
-    .links {
-      display: flex;
-      gap: 24px;
-      justify-content: center;
-      flex-wrap: wrap;
-      margin-bottom: 32px;
-    }
-
-    .links a {
-      color: var(--muted);
-      text-decoration: none;
-      font-size: 13px;
-      transition: color 0.2s;
-    }
-
-    .links a:hover {
-      color: var(--gold);
-    }
-
-    .footer {
-      color: var(--muted);
-      font-size: 12px;
-      opacity: 0.6;
-    }
-
-    .footer a {
-      color: var(--gold);
-      text-decoration: none;
-    }
-
-    @media (max-width: 480px) {
-      h1 {
-        font-size: 36px;
-        letter-spacing: 4px;
-      }
-
-      .tagline {
-        font-size: 16px;
-      }
-
-      .glow {
-        width: 96px;
-        height: 96px;
-        border-radius: 22px;
-      }
-
-      .glow img {
-        border-radius: 22px;
-      }
-
-      .lang-tab {
-        padding: 7px 18px;
-        font-size: 12px;
-      }
-    }
-  </style>
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *{animation:none!important;transition:none!important}
+  html.js .rv{opacity:1;transform:none}
+  .ring.run{opacity:.7}
+}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"MobileApplication","@id":"https://deruni.app/#app","name":"Deruni","operatingSystem":"iOS, Android","applicationCategory":"HealthApplication","inLanguage":["tr","en"],"url":"https://deruni.app/","image":"https://deruni.app/assets/og-tr.png","description":"Deruni; bir dakika nefes, bir Esma ve kısa bir tefekkür için sade bir alan. Hesap yok, kayıt yok, giriş yok. iOS ve Android'de ücretsiz.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@id":"https://deruni.app/#org"},"downloadUrl":["https://apps.apple.com/tr/app/deruni/id6759687639","https://play.google.com/store/apps/details?id=com.mehmetcolak.deruni&hl=tr"]},{"@type":"Organization","@id":"https://deruni.app/#org","name":"Deruni","alternateName":"Derûnî","url":"https://deruni.app/","logo":"https://deruni.app/assets/apple-touch-icon.png","email":"iletisimderuni@gmail.com","sameAs":["https://www.youtube.com/@Deruniapp","https://www.instagram.com/deruniapp/","https://www.tiktok.com/@deruniapp","https://open.spotify.com/artist/2QThTToZzGgTAy8RZBFgSx","https://music.apple.com/us/artist/der%C3%BBn%C3%AE/6803085837","https://apps.apple.com/app/deruni/id6759687639","https://play.google.com/store/apps/details?id=com.mehmetcolak.deruni"]},{"@type":"WebSite","@id":"https://deruni.app/#website","url":"https://deruni.app/","name":"Deruni","inLanguage":"tr","publisher":{"@id":"https://deruni.app/#org"}},{"@type":"FAQPage","@id":"https://deruni.app/#faq","inLanguage":"tr","mainEntity":[{"@type":"Question","name":"Deruni ücretsiz mi?","acceptedAnswer":{"@type":"Answer","text":"Evet. Zikir, 1 Dakika Nefes, Esma Kütüphanesi'nin tamamı, on altı ilahinin tamamı, bir sesli tefekkür, üç yolun da 1. günü ve günde bir Manevi Tavsiye ücretsizdir. Premium aboneliği yolculukların tamamını, on iki sesli tefekkürü ve sınırsız tavsiyeyi açar. Fiyat bulunduğun ülkeye göre değişir ve mağazada görünür."}},{"@type":"Question","name":"Hesap açmam gerekiyor mu, verilerim nereye gidiyor?","acceptedAnswer":{"@type":"Answer","text":"Hesap yok, kayıt yok, giriş yok; bir e-posta bile sorulmaz. Tüm veriler varsayılan olarak yalnızca cihazında saklanır. Anonim kullanım verisi varsayılan olarak kapalıdır ve istediğin zaman tüm verilerini dışa aktarabilir ya da silebilirsin."}},{"@type":"Question","name":"İnternet olmadan çalışır mı?","acceptedAnswer":{"@type":"Answer","text":"Zikir, nefes ve on iki sesli tefekkür uygulamanın içinde gömülü olduğu için internetsiz çalışır. Yolculuk günlerinin sesli eşlikleri ve ilahiler ilk dinlemede indirilir; indirdikten sonra onlar da çevrimdışı açılır."}},{"@type":"Question","name":"Deruni tıbbi ya da psikolojik bir uygulama mı?","acceptedAnswer":{"@type":"Answer","text":"Hayır. Deruni tıbbi tedavi veya psikolojik terapi yerine geçmez. İçerikler manevi destek ve kişisel farkındalık amacı taşır; herhangi bir hastalığı teşhis etme, tedavi etme veya önleme iddiası taşımaz. Ciddi bir zorlanma yaşıyorsan bir sağlık uzmanına başvur; acil durumda 112."}},{"@type":"Question","name":"Deruni Yolculuk nedir, nereden başlarım?","acceptedAnswer":{"@type":"Answer","text":"Her biri yedi gün süren üç yol var: Sükûnet, Gece Sükûneti ve Uykuya Hazırlık, Öz Değer. Toplam yirmi bir gün. Her gün bir Esma etrafında bir dakika nefes, zikir, güne özel bir sesli eşlik, bir tefekkür sorusu ve küçük bir adım birleşir. Her yolun 1. günü herkese açıktır, yani indirir indirmez üç tam gün yürüyebilirsin."}},{"@type":"Question","name":"İlahileri nereden dinleyebilirim?","acceptedAnswer":{"@type":"Answer","text":"On altı ilahinin tamamı uygulamanın İlahiler bölümünde ücretsizdir. Bu sayfadan da hiçbir şey indirmeden dinleyebilirsin. Yayınlar ayrıca Spotify, Apple Music ve YouTube üzerinden sürüyor."}},{"@type":"Question","name":"Hangi dillerde kullanılabiliyor?","acceptedAnswer":{"@type":"Answer","text":"Uygulama arayüzü Türkçe ve İngilizcedir; sesli tefekkürler ve yolculuk kayıtları iki dilde de ayrı ayrı seslendirilmiştir. İlahiler Türkçe, İngilizce ve Arapça olarak bulunur."}},{"@type":"Question","name":"Hangi cihazlarda çalışıyor?","acceptedAnswer":{"@type":"Answer","text":"iOS ve Android. App Store ve Google Play üzerinden ücretsiz indirilir."}}]}]}</script>
 </head>
-
 <body>
+<a class="skip" href="#main">İçeriğe geç</a>
 
-  <div class="lang-switcher">
-    <button class="lang-tab active" data-lang="en" onclick="setLang('en')">EN</button>
-    <button class="lang-tab" data-lang="tr" onclick="setLang('tr')">TR</button>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="/"><img src="/assets/logo-256.webp" width="26" height="26" alt="" decoding="async">DERÛNÎ</a>
+    <nav class="tnav" aria-label="Site">
+      <a href="/" aria-current="page" hreflang="tr">TR</a><span class="sep" aria-hidden="true">|</span><a href="/en/" hreflang="en">EN</a>
+      <span class="sep" aria-hidden="true">·</span>
+      <a class="hy" href="#ilahiler">İlahiler</a>
+      <span class="sep" aria-hidden="true">·</span>
+      <a class="dl" href="#indir">İndir</a>
+    </nav>
   </div>
+</header>
 
-  <div class="glow"><img src="/logo.png" alt="Deruni Logo"></div>
+<main id="main">
 
-  <h1>DERUNİ</h1>
-  <p class="tagline" id="tagline">Return to Your Heart</p>
-  <p class="tagline-sub" id="tagline-sub">Kalbine Dönüş</p>
-
-  <div class="features" id="features">
-    <div class="feature"><span>🧘</span> <span data-en="12 Guided Meditations" data-tr="12 Rehberli Meditasyon">12
-        Guided Meditations</span></div>
-    <div class="feature"><span>📿</span> <span data-en="Dhikr Counter" data-tr="Zikir Sayacı">Dhikr Counter</span></div>
-    <div class="feature"><span>✨</span> <span data-en="99 Esma Library" data-tr="99 Esma Kütüphanesi">99 Esma
-        Library</span></div>
-    <div class="feature"><span>🌙</span> <span data-en="Spiritual Guidance" data-tr="Manevi Rehberlik">Spiritual
-        Guidance</span></div>
-    <div class="feature"><span>🫁</span> <span data-en="Breath Sessions" data-tr="Nefes Seansları">Breath
-        Sessions</span></div>
-    <div class="feature"><span>🔒</span> <span data-en="Privacy First" data-tr="Gizlilik Öncelikli">Privacy First</span>
+<!-- 2 · HERO -->
+<section class="hero" id="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="over">iOS ve Android · Ücretsiz · Hesap yok</p>
+      <h1>Kalbine dön.</h1>
+      <p class="lead">Deruni; bir dakika nefes, bir Esma ve kısa bir tefekkür için sade bir alan. Kalbin daraldığında açarsın, bir ile beş dakikanı alır, sonra kapatırsın.</p>
+      <div class="btns" id="indir">
+        <a class="btn btn-p" href="https://apps.apple.com/tr/app/deruni/id6759687639">App Store'dan indir</a>
+        <a class="btn btn-s" href="https://play.google.com/store/apps/details?id=com.mehmetcolak.deruni&hl=tr">Google Play'den indir</a>
+      </div>
+      <p class="trust">Hesap açman gerekmiyor. Kalbine dair yazdığın hiçbir şeyin gideceği bir sunucu yok.</p>
+      <p class="mi offl">Zikir, nefes ve sesli tefekkür internetsiz çalışır.</p>
+      <a class="tolink" href="#nefes">Önce burada bir dakika nefes al ↓</a>
+    </div>
+    <div class="figw">
+      <div class="phone"><img src="/assets/05-zikr-tr-620.webp" srcset="/assets/05-zikr-tr-620.webp 620w, /assets/05-zikr-tr-900.webp 900w" sizes="(min-width:900px) 300px, 56vw" width="620" height="1348" alt="Deruni zikir ekranı: YA SELÂM ve dolan halka" fetchpriority="high" decoding="async"></div>
+      <p class="cap">Ekran: Zikir · YA SELÂM</p>
     </div>
   </div>
+</section>
 
-  <div class="store-badges">
-    <a href="https://apps.apple.com/tr/app/deruni/id6759687639?l=tr" class="store-badge" target="_blank" rel="noopener">
+<!-- 3 · BİR DAKİKA DENE -->
+<section id="nefes" class="rv band">
+  <div class="wrap breath-wrap">
+    <div>
+      <p class="over">DENE</p>
+      <h2>Önce bir dakika.</h2>
+    </div>
+    <p>Uygulamadaki nefes tam olarak bu ritimde: dört saniye al, iki saniye tut, dört saniye ver. Altmış saniye sürer. İstersen şimdi, burada dene.</p>
+    <div class="ring" id="ring">
+      <span class="phase" id="phase" aria-live="polite">1:00</span>
+      <span class="count" id="count" aria-hidden="true"></span>
+    </div>
+    <button class="btn btn-s" id="bBtn" type="button">Başlat</button>
+    <div class="done" id="bDone" hidden>
+      <p class="h">Bir dakikanı kalbine ayırdın.</p>
+      <p class="sm mu" style="margin:10px auto 18px;max-width:52ch">Uygulamada bunun adı &#8220;1 Dakika Nefes&#8221;. Yanında zikir, Esma Kütüphanesi ve on altı ilahi var — hepsi ücretsiz.</p>
+      <a class="btn btn-p" href="https://apps.apple.com/tr/app/deruni/id6759687639">Uygulamayı indir</a>
+    </div>
+    <p class="canon">Nefesini sabitle, kalbine dön. Sessiz ve sade bir dakika.</p>
+    <p class="mi" style="max-width:60ch">Nefes çalışması sırasında rahatsızlık hissedersen normal nefesine dön. Deruni tıbbi tedavi veya psikolojik terapi yerine geçmez — <a href="#sinir" style="color:var(--gold)">tam metni aşağıda</a>.</p>
+  </div>
+</section>
+
+<!-- 6 · UYGULAMADA NE VAR -->
+<section class="rv">
+  <div class="wrap">
+    <h2>Yolculuk dışında, her gün elinin altında</h2>
+    <div class="cards">
+
+      <article class="card c6">
+        <h3>Derûnî İlahileri <span class="chip">TAMAMI ÜCRETSİZ</span></h3>
+        <p>On altı özgün ilahi, altı eser ailesi, üç dilde. Elli beş dakika on yedi saniye. Premium ile hiçbir bağı yok.</p>
+        <p style="margin-top:14px"><a href="#ilahiler" style="color:var(--gold);text-decoration:none;border-bottom:1px solid var(--gold-28);padding-bottom:2px">Şimdi dinle ↓</a></p>
+      </article>
+
+      <article class="card c1">
+        <div class="c1-in">
+          <div>
+            <h3>Esma Kütüphanesi <span class="chip">ÜCRETSİZ</span></h3>
+            <p>Esmâ-ül Hüsnâ'yı keşfet. Her kayıtta Arapça yazılış, kısa anlam, ebced, manevi tefekkür, &#8220;Zihin ve Davranış Notu&#8221;, nasıl çalışır ve Derûnî sentezi var. Tamamı ücretsiz — burada kilit yok.</p>
+            <p class="mi" style="margin-top:12px">Ebced geleneksel bir işarettir; ulaşman gereken bir hedef değil.</p>
+          </div>
+          <div class="phone crop"><img src="/assets/08-esma-detail-tr-620.webp" srcset="/assets/08-esma-detail-tr-620.webp 620w, /assets/08-esma-detail-tr-900.webp 900w" sizes="(min-width:900px) 200px, 44vw" width="620" height="750" alt="Deruni Esma kartı: YA SELÂM, ebced değeri ve manevi anlam" loading="lazy" decoding="async"></div>
+        </div>
+      </article>
+
+      <article class="card c2">
+        <h3>Zikir <span class="chip">ÜCRETSİZ</span></h3>
+        <p>Dokunmatik daire, hedef 33 ya da 99, hafif bir titreşim ve uygulamaya gömülü bir çan sesi. Halka ilerledikçe dolar.</p>
+        <p class="q">Bugün kalbine vakit ayırdın. Bu ritim seninle kalsın.</p>
+      </article>
+
+      <article class="card c3">
+        <h3>1 Dakika Nefes <span class="chip">ÜCRETSİZ</span></h3>
+        <p>Altmış saniye. Dört saniye al, iki saniye tut, dört saniye ver.</p>
+        <p class="q">Nefesini sabitle, kalbine dön. Sessiz ve sade bir dakika.</p>
+      </article>
+
+      <article class="card c4">
+        <h3>Sesli Tefekkürler <span class="chip">BİRİ ÜCRETSİZ</span></h3>
+        <p>On iki sesli tefekkür; Türkçe ve İngilizce için ayrı ayrı, orijinal seslendirmeyle kaydedildi. Süreler Türkçede 2:17 ile 5:21, İngilizcede 2:53 ile 7:39 arasında. Uygulamaya gömülüdür — internetsiz de çalışır. &#8220;Kalbe Dönüş&#8221; herkese açık.</p>
+        <p class="mlist">Kalbe Dönüş · Şükür Tefekkürü · Sakin Nefes · İç Huzur &amp; Kalp Yumuşatma · Kaygıyla Sakinleşme · Yenilenme &amp; İç Canlılık · Gece Güven &amp; Uykuya Geçiş · Sabah Enerji &amp; Umut · Kalp Yumuşatma &amp; İç İncelik · Uykuya Hazırlık · Öz Değer &amp; İç Değer Hissi · Zihni Sakinleştirme</p>
+      </article>
+
+      <article class="card c5">
+        <h3>Manevi Tavsiye <span class="chip">GÜNDE BİR ÜCRETSİZ</span></h3>
+        <p>On altı seçilebilir his ya da kendi cümlen. Karşılığında bir Esma, bir nefes ve bir tefekkür daveti gelir. Motor tamamen cihazının içinde çalışır; kural tabanlıdır ve her senaryonun kaynak seviyesi bellidir.</p>
+        <p class="q">Öneri sadece cihazındaki veriye göre.</p>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- 7 · GİZLİLİK -->
+<section class="priv rv">
+  <div class="wrap">
+    <p class="over">GİZLİLİK</p>
+    <h2>Kalbine yazdıkların sende kalır.</h2>
+    <p style="margin-top:20px">Deruni'de hesap yok, kayıt yok, giriş yok. Bir e-posta bile sormuyoruz. Yazdığın hiçbir şeyin gideceği bir sunucu yok — çünkü silmemiz gereken bir kaydın olmadığı için sızdırabileceğimiz bir kaydın da yok.</p>
+    <ul class="plist">
+      <li>Tüm veriler varsayılan olarak yalnızca cihazında saklanır.</li>
+      <li>İzin vermeden hiçbir kişisel verin sunucularımıza gönderilmez.</li>
+      <li>İstediğin zaman tüm verilerini silebilir veya dışa aktarabilirsin.</li>
+    </ul>
+    <div class="facts">
+      <p class="fact"><svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M2 7.5l3.2 3.2L12 4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg> Analitik varsayılan olarak kapalı</p>
+      <p class="fact"><svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M2 7.5l3.2 3.2L12 4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg> Android izin listesi boş</p>
+      <p class="fact"><svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M2 7.5l3.2 3.2L12 4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg> Mikrofon izni bloklu</p>
+      <p class="fact"><svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M2 7.5l3.2 3.2L12 4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg> Reklam takibi yok</p>
+    </div>
+    <p class="gs" style="font-family:var(--serif);font-size:19px;line-height:1.6;max-width:62ch">Bu sayfa da öyle davranır: çerez yok, izleme kodu yok, dış betik yok, üçüncü taraf gömülü oynatıcı yok. Aşağıdaki ilahiler kendi sunucumuzdan gelir ve sen &#8220;çal&#8221; demeden tek bayt inmez. Video kapaklarını bile burada tutuyoruz ki bu sayfayı açman seni hiçbir platforma tanıtmasın.</p>
+    <p class="links" style="margin-top:26px">
+      <a href="/privacy.html?lang=tr">Gizlilik Politikası</a>
+      <a href="/kvkk.html?lang=tr">KVKK Aydınlatma Metni</a>
+    </p>
+  </div>
+</section>
+
+<!-- 10 · DERÛNÎ İLAHİLERİ -->
+<section id="ilahiler" class="rv band">
+  <div class="wrap">
+    <div class="hymn-top">
+      <div class="hymn-main">
       <div>
-        <span class="label" data-en="Download on the" data-tr="İndir">Download on the</span>
-        <span class="name">App Store</span>
+        <p class="over">İLAHİLER</p>
+        <h2>Derûnî'nin özgün ilahileri</h2>
+        <p class="lead" style="margin-top:14px">Kalbe eşlik eden özgün ezgiler.</p>
+        <p style="margin-top:22px">On altı ilahi: altısı Türkçe, beşi İngilizce, beşi Arapça — altı eser ailesi, toplam elli beş dakika on yedi saniye. Tamamı uygulamada ücretsiz; Premium ile hiçbir bağı yok. Burada, hiçbir şey indirmeden dinleyebilirsin.</p>
+        <p class="mi" style="margin-top:18px">Sen &#8220;çal&#8221; demeden hiçbir ses çalmaz ve tek bayt inmez. Tek dokunuşla durdurabilirsin.</p>
       </div>
-    </a>
-    <a href="https://play.google.com/store/apps/details?id=com.mehmetcolak.deruni&pcampaignid=web_share"
-      class="store-badge" target="_blank" rel="noopener">
-      <div>
-        <span class="label" data-en="Get it on" data-tr="İndir">Get it on</span>
-        <span class="name">Google Play</span>
+    <div class="tabs" role="group" aria-label="İlahi dili">
+      <button class="tab" type="button" data-lang="tr" aria-pressed="true">Türkçe</button>
+      <button class="tab" type="button" data-lang="en" aria-pressed="false">English</button>
+      <button class="tab" type="button" data-lang="ar" aria-pressed="false" lang="ar">العربية</button>
+    </div>
+
+    <p id="trkStatus" class="sr-only" role="status" aria-live="polite"></p>
+
+    <div class="tracks">
+        <div class="fam">
+      <p class="famh">AİLE 1 · BİSMİLLAH</p>
+      <button class="trk" type="button" data-tlang="tr" data-src="https://deruni.vetkriter.com/ilahi/ilahi_bismillah_tr.mp3" data-title="Bismillah De, Başla Gönül" aria-label="Bismillah De, Başla Gönül, 2 dakika 58 saniye, çal" aria-pressed="false">
+        <span class="pb" aria-hidden="true"><svg width="11" height="12" viewBox="0 0 11 12" aria-hidden="true"><path d="M1 1v10l9-5z" fill="currentColor"/></svg></span>
+        <span class="meta"><span class="tt">Bismillah De, Başla Gönül</span><span class="tl">Türkçe</span></span>
+        <span class="rt"><span class="dur">2:58</span><span class="mb">≈7,2 MB</span></span>
+        <span class="prog" aria-hidden="true"></span>
+      </button>
+      <button class="trk" type="button" data-tlang="en" data-src="https://deruni.vetkriter.com/ilahi/ilahi_bismillah_en.mp3" data-title="Begin With Bismillah" aria-label="Begin With Bismillah, 2 dakika 26 saniye, çal" aria-pressed="false">
+        <span class="pb" aria-hidden="true"><svg width="11" height="12" viewBox="0 0 11 12" aria-hidden="true"><path d="M1 1v10l9-5z" fill="currentColor"/></svg></span>
+        <span class="meta"><span class="tt">Begin With Bismillah</span><span class="tl">English</span></span>
+        <span class="rt"><span class="dur">2:26</span><span class="mb">≈5,9 MB</span></span>
+        <span class="prog" aria-hidden="true"></span>
+      </button>
+      <button class="trk" type="button" data-tlang="ar" data-src="https://deruni.vetkriter.com/ilahi/ilahi_bismillah_ar.mp3" data-title="قل بسم الله وابدأ" aria-label="قل بسم الله وابدأ, 2 dakika 21 saniye, çal" aria-pressed="false">
+        <span class="pb" aria-hidden="true"><svg width="11" height="12" viewBox="0 0 11 12" aria-hidden="true"><path d="M1 1v10l9-5z" fill="currentColor"/></svg></span>
+        <span class="meta"><span class="tt ar" lang="ar" dir="rtl">قل بسم الله وابدأ</span><span class="tl">العربية</span></span>
+        <span class="rt"><span class="dur">2:21</span><span class="mb">≈5,7 MB</span></span>
+        <span class="prog" aria-hidden="true"></span>
+      </button>
+    </div>
+    <div class="fam">
+      <p class="famh">AİLE 2 · RAHMET</p>
+      <button class="trk" type="button" data-tlang="tr" data-src="https://deruni.vetkriter.com/ilahi/ilahi_rahmet_tr.mp3" data-title="Rahmet Yakın" aria-label="Rahmet Yakın, 4 dakika 24 saniye, çal" aria-pressed="false">
+        <span class="pb" aria-hidden="true"><svg width="11" height="12" viewBox="0 0 11 12" aria-hidden="true"><path d="M1 1v10l9-5z" fill="currentColor"/></svg></span>
+        <span class="meta"><span class="tt">Rahmet Yakın</span><span class="tl">Türkçe</span></span>
+        <span class="rt"><span class="dur">4:24</span><span class="mb">≈10,4 MB</span></span>
+        <span class="prog" aria-hidden="true"></span>
+      </button>
+      <button class="trk" type="button" data-tlang="en" data-src="https://deruni.vetkriter.com/ilahi/ilahi_rahmet_en.mp3" data-title="Mercy Is Near" aria-label="Mercy Is Near, 3 dakika 34 saniye, çal" aria-pressed="false">
+        <span class="pb" aria-hidden="true"><svg width="11" height="12" viewBox="0 0 11 12" aria-hidden="true"><path d="M1 1v10l9-5z" fill="currentColor"/></svg></span>
+        <span class="meta"><span class="tt">Mercy Is Near</span><span class="tl">English</span></span>
+        <span class="rt"><span class="dur">3:34</span><span class="mb">≈8,5 MB</span></span>
+        <span class="prog" aria-hidden="true"></span>
+      </button>
+      <button class="trk" type="button" data-tlang="ar" data-src="https://deruni.vetkriter.com/ilahi/ilahi_rahmet_ar.mp3" data-title="رحمة ربي قريبة" aria-label="رحمة ربي قريبة, 3 dakika 2 saniye, çal" aria-pressed="false">
+        <span class="pb" aria-hidden="true"><svg width="11" height="12" viewBox="0 0 11 12" aria-hidden="true"><path d="M1 1v10l9-5z" fill="currentColor"/></svg></span>
+        <span class="meta"><span class="tt ar" lang="ar" dir="rtl">رحمة ربي قريبة</span><span class="tl">العربية</span></span>
+        <span class="rt"><span class="dur">3:02</span><span class="mb">≈7,3 MB</span></span>
+        <span class="prog" aria-hidden="true"></span>
+      </button>
+    </div>
+    <div class="fam">
+      <p class="famh">AİLE 3 · KALBİM</p>
+      <button class="trk" type="button" data-tlang="tr" data-src="https://deruni.vetkriter.com/ilahi/ilahi_kalbim_tr.mp3" data-title="Kalbim Sana Yönelir" aria-label="Kalbim Sana Yönelir, 4 dakika 12 saniye, çal" aria-pressed="false">
+        <span class="pb" aria-hidden="true"><svg width="11" height="12" viewBox="0 0 11 12" aria-hidden="true"><path d="M1 1v10l9-5z" fill="currentColor"/></svg></span>
+        <span class="meta"><span class="tt">Kalbim Sana Yönelir</span><span class="tl">Türkçe</span></span>
+        <span class="rt"><span class="dur">4:12</span><span class="mb">≈9,9 MB</span></span>
+        <span class="prog" aria-hidden="true"></span>
+      </button>
+      <button class="trk" type="button" data-tlang="en" data-src="https://deruni.vetkriter.com/ilahi/ilahi_kalbim_en.mp3" data-title="My Heart Turns to You" aria-label="My Heart Turns to You, 3 dakika 8 saniye, çal" aria-pressed="false">
+        <span class="pb" aria-hidden="true"><svg width="11" height="12" viewBox="0 0 11 12" aria-hidden="true"><path d="M1 1v10l9-5z" fill="currentColor"/></svg></span>
+        <span class="meta"><span class="tt">My Heart Turns to You</span><span class="tl">English</span></span>
+        <span class="rt"><span class="dur">3:08</span><span class="mb">≈7,4 MB</span></span>
+        <span class="prog" aria-hidden="true"></span>
+      </button>
+      <button class="trk" type="button" data-tlang="ar" data-src="https://deruni.vetkriter.com/ilahi/ilahi_kalbim_ar.mp3" data-title="إليك يعود فؤادي" aria-label="إليك يعود فؤادي, 3 dakika 12 saniye, çal" aria-pressed="false">
+        <span class="pb" aria-hidden="true"><svg width="11" height="12" viewBox="0 0 11 12" aria-hidden="true"><path d="M1 1v10l9-5z" fill="currentColor"/></svg></span>
+        <span class="meta"><span class="tt ar" lang="ar" dir="rtl">إليك يعود فؤادي</span><span class="tl">العربية</span></span>
+        <span class="rt"><span class="dur">3:12</span><span class="mb">≈7,6 MB</span></span>
+        <span class="prog" aria-hidden="true"></span>
+      </button>
+    </div>
+    <div class="fam">
+      <p class="famh">AİLE 4 · ŞİFA</p>
+      <button class="trk" type="button" data-tlang="tr" data-src="https://deruni.vetkriter.com/ilahi/ilahi_sifa_tr.mp3" data-title="Şifa Senden, Sabır Senden" aria-label="Şifa Senden, Sabır Senden, 4 dakika 38 saniye, çal" aria-pressed="false">
+        <span class="pb" aria-hidden="true"><svg width="11" height="12" viewBox="0 0 11 12" aria-hidden="true"><path d="M1 1v10l9-5z" fill="currentColor"/></svg></span>
+        <span class="meta"><span class="tt">Şifa Senden, Sabır Senden</span><span class="tl">Türkçe</span></span>
+        <span class="rt"><span class="dur">4:38</span><span class="mb">≈10,8 MB</span></span>
+        <span class="prog" aria-hidden="true"></span>
+      </button>
+      <button class="trk" type="button" data-tlang="en" data-src="https://deruni.vetkriter.com/ilahi/ilahi_sifa_en.mp3" data-title="Healing Comes from You" aria-label="Healing Comes from You, 4 dakika 19 saniye, çal" aria-pressed="false">
+        <span class="pb" aria-hidden="true"><svg width="11" height="12" viewBox="0 0 11 12" aria-hidden="true"><path d="M1 1v10l9-5z" fill="currentColor"/></svg></span>
+        <span class="meta"><span class="tt">Healing Comes from You</span><span class="tl">English</span></span>
+        <span class="rt"><span class="dur">4:19</span><span class="mb">≈10,2 MB</span></span>
+        <span class="prog" aria-hidden="true"></span>
+      </button>
+      <button class="trk" type="button" data-tlang="ar" data-src="https://deruni.vetkriter.com/ilahi/ilahi_sifa_ar.mp3" data-title="منك الشفاء ومنك الصبر" aria-label="منك الشفاء ومنك الصبر, 3 dakika 58 saniye, çal" aria-pressed="false">
+        <span class="pb" aria-hidden="true"><svg width="11" height="12" viewBox="0 0 11 12" aria-hidden="true"><path d="M1 1v10l9-5z" fill="currentColor"/></svg></span>
+        <span class="meta"><span class="tt ar" lang="ar" dir="rtl">منك الشفاء ومنك الصبر</span><span class="tl">العربية</span></span>
+        <span class="rt"><span class="dur">3:58</span><span class="mb">≈9,4 MB</span></span>
+        <span class="prog" aria-hidden="true"></span>
+      </button>
+    </div>
+    <div class="fam">
+      <p class="famh">AİLE 5 · YA LATÎF</p>
+      <button class="trk" type="button" data-tlang="tr" data-src="https://deruni.vetkriter.com/ilahi/ilahi_yalatif_tr.mp3" data-title="Ya Latîf, Ya Selâm" aria-label="Ya Latîf, Ya Selâm, 3 dakika 12 saniye, çal" aria-pressed="false">
+        <span class="pb" aria-hidden="true"><svg width="11" height="12" viewBox="0 0 11 12" aria-hidden="true"><path d="M1 1v10l9-5z" fill="currentColor"/></svg></span>
+        <span class="meta"><span class="tt">Ya Latîf, Ya Selâm</span><span class="tl">Türkçe</span></span>
+        <span class="rt"><span class="dur">3:12</span><span class="mb">≈7,7 MB</span></span>
+        <span class="prog" aria-hidden="true"></span>
+      </button>
+      <button class="trk" type="button" data-tlang="en" data-src="https://deruni.vetkriter.com/ilahi/ilahi_yalatif_en.mp3" data-title="Ya Latif, Ya Salam" aria-label="Ya Latif, Ya Salam, 3 dakika 42 saniye, çal" aria-pressed="false">
+        <span class="pb" aria-hidden="true"><svg width="11" height="12" viewBox="0 0 11 12" aria-hidden="true"><path d="M1 1v10l9-5z" fill="currentColor"/></svg></span>
+        <span class="meta"><span class="tt">Ya Latif, Ya Salam</span><span class="tl">English</span></span>
+        <span class="rt"><span class="dur">3:42</span><span class="mb">≈8,7 MB</span></span>
+        <span class="prog" aria-hidden="true"></span>
+      </button>
+      <button class="trk" type="button" data-tlang="ar" data-src="https://deruni.vetkriter.com/ilahi/ilahi_yalatif_ar.mp3" data-title="يا سلام، يا لطيف" aria-label="يا سلام، يا لطيف, 3 dakika 32 saniye, çal" aria-pressed="false">
+        <span class="pb" aria-hidden="true"><svg width="11" height="12" viewBox="0 0 11 12" aria-hidden="true"><path d="M1 1v10l9-5z" fill="currentColor"/></svg></span>
+        <span class="meta"><span class="tt ar" lang="ar" dir="rtl">يا سلام، يا لطيف</span><span class="tl">العربية</span></span>
+        <span class="rt"><span class="dur">3:32</span><span class="mb">≈8,4 MB</span></span>
+        <span class="prog" aria-hidden="true"></span>
+      </button>
+    </div>
+    <div class="fam">
+      <p class="famh">AİLE 6 · ANLAR</p>
+      <button class="trk" type="button" data-tlang="tr" data-src="https://deruni.vetkriter.com/ilahi/ilahi_anlar_tr.mp3" data-title="Anlar Bizi" aria-label="Anlar Bizi, 2 dakika 39 saniye, çal" aria-pressed="false">
+        <span class="pb" aria-hidden="true"><svg width="11" height="12" viewBox="0 0 11 12" aria-hidden="true"><path d="M1 1v10l9-5z" fill="currentColor"/></svg></span>
+        <span class="meta"><span class="tt">Anlar Bizi</span><span class="tl">Türkçe</span></span>
+        <span class="rt"><span class="dur">2:39</span><span class="mb">≈6,1 MB</span></span>
+        <span class="prog" aria-hidden="true"></span>
+      </button>
+      <p class="mi credit">Söz: Niyâzî-i Mısrî — günümüz Türkçesiyle. Bu eserin yalnız Türkçe kaydı vardır.</p>
+    </div>
+    </div>
+
+    <p class="mi" style="margin-top:20px">Kayıtlar yüksek kaliteli. Mobil veriyle dinliyorsan boyutlar satırların yanında yazıyor.</p>
       </div>
-    </a>
+      <div class="figw">
+        <div class="phone"><img src="/assets/02-hymns-tr-620.webp" srcset="/assets/02-hymns-tr-620.webp 620w, /assets/02-hymns-tr-900.webp 900w" sizes="(min-width:900px) 268px, 60vw" width="620" height="1348" alt="Deruni İlahiler ekranı: Türkçe, İngilizce ve Arapça sekmeleri ve eser listesi" loading="lazy" decoding="async"></div>
+        <p class="cap">Ekran: İlahiler</p>
+      </div>
+    </div>
+
+    <div class="rel">
+      <h3>Yayınlar sürüyor</h3>
+      <p style="margin-top:12px">Derûnî'nin ilk parçası — <span lang="ar" dir="rtl" class="ar">قل بسم الله وابدأ</span> — 28 Ağustos'ta Spotify ve Apple Music'te yayımlandı; diğerleri sırada. YouTube kanalında &#8220;Derûnî İlahileri&#8221; oynatma listesi var. On altı ilahinin tamamını dinlemek istersen yeri uygulamanın kendisi — hepsi orada ve ücretsiz; bir kez dinlediğin ilahi cihazına iner, sonrasında internetsiz de açılır.</p>
+      <div class="vids">
+        <a class="vid" href="https://www.youtube.com/watch?v=533oRMkoA-k" rel="noopener nofollow"><img src="/assets/yt-533oRMkoA-k.webp" width="480" height="270" alt="Rahmet Yakın müzik videosu kapağı" loading="lazy" decoding="async"><span>Rahmet Yakın | Derûnî – Yeni Nesil İlahi</span></a>
+        <a class="vid" href="https://www.youtube.com/watch?v=e5rmDotfXLg" rel="noopener nofollow"><img src="/assets/yt-e5rmDotfXLg.webp" width="480" height="270" alt="Kalbim Sana Yönelir müzik videosu kapağı" loading="lazy" decoding="async"><span>Kalbim Sana Yönelir | Derûnî – Yeni Nesil İlahi</span></a>
+        <a class="vid" href="https://www.youtube.com/watch?v=KIkyruTHNPU" rel="noopener nofollow"><img src="/assets/yt-KIkyruTHNPU.webp" width="480" height="270" alt="Anlar Bizi müzik videosu kapağı" loading="lazy" decoding="async"><span>Anlar Bizi — Derûnî | Niyâzî-i Mısrî | Günümüz Türkçesiyle</span></a>
+      </div>
+      <p class="mi">Videoları buraya gömmüyoruz; gömülü oynatıcılar seni izleyen kodlar taşır. Kapaklar kendi sunucumuzda duruyor ve tıklarsan seni YouTube'a götürür.</p>
+      <nav class="links" aria-label="Derûnî hesapları">
+        <a href="https://www.youtube.com/@Deruniapp" rel="noopener">Derûnî kanalı</a>
+        <a href="https://open.spotify.com/artist/2QThTToZzGgTAy8RZBFgSx" rel="noopener">Spotify</a>
+        <a href="https://music.apple.com/tr/artist/der%C3%BBn%C3%AE/6803085837?l=tr" rel="noopener">Apple Music</a>
+        <a href="https://www.instagram.com/deruniapp/" rel="noopener">Instagram</a>
+        <a href="https://www.tiktok.com/@deruniapp" rel="noopener">TikTok</a>
+      </nav>
+    </div>
+
+    <div class="hymn-cta">
+      <p class="invite" style="font-size:clamp(19px,2.6vw,26px)">Beğendiğin bir ezgi olduysa, on altısı da uygulamada seni bekliyor — ücretsiz; indirdikten sonra internetsiz de dinlersin.</p>
+      <div class="btns" style="justify-content:center">
+        <a class="btn btn-p" href="https://apps.apple.com/tr/app/deruni/id6759687639">Uygulamayı indir</a>
+      </div>
+    </div>
   </div>
+</section>
 
-  <div class="divider"></div>
+<!-- 4 · AÇIK YOL HARİTASI -->
+<section class="mapsec rv">
+  <div class="wrap">
+    <p class="over">DERUNİ YOLCULUK</p>
+    <h2>Yirmi bir gün, üç yol. Hiçbiri gizli değil.</h2>
+    <p style="margin-top:20px">Her gün bir Esma etrafında nefes, zikir ve tefekkürü birleştiren 7 günlük kalbe dönüş yolları. Aşağıdaki her kutu uygulamadaki gerçek bir gündür: kendi Esması, kendi başlığı ve güne özel kendi sesli eşliği vardır. Bir günün beş adımı şudur — bir dakika nefes, zikir (33 ya da 99), güne özel sesli eşlik, bir tefekkür sorusu ve küçük bir adım.</p>
 
-  <div class="links">
-    <a href="/privacy.html" data-en="Privacy Policy" data-tr="Gizlilik Politikası">Privacy Policy</a>
-    <a href="/terms.html" data-en="Terms of Use" data-tr="Kullanım Koşulları">Terms of Use</a>
-    <a href="/kvkk.html">KVKK</a>
-    <a href="mailto:iletisimderuni@gmail.com" data-en="Contact" data-tr="İletişim">Contact</a>
+    <div class="mapinvite">
+      <p class="invite">Her adım bir davettir; dilediğini atlayabilirsin. Kaçırdığın gün yolunu bozmaz — kaldığın yerden devam edersin.</p>
+      <p class="sm mu" style="text-align:center;max-width:60ch;margin:16px auto 0">Tekrar sayıları geleneksel zikir pratiğinden ilham alan isteğe bağlı ritimlerdir — kendini zorlamadan kendi ritminde ilerleyebilirsin.</p>
+    </div>
+
+    <div class="map">
+      <section class="path" aria-labelledby="p1">
+        <div class="phead">
+        <h3 id="p1">7 Günlük Sükûnet</h3>
+        <p class="psub">Kaygılı kalpten emniyetli sükûnete — her gün bir Esma eşliğinde.</p>
+        </div>
+        <ol class="days">
+          <li class="day"><div class="top"><span class="daynum">GÜN 01</span><span class="chip">ÜCRETSİZ</span></div><span class="esma">YA SELÂM</span><p class="ttl">Varış: Selamet</p></li>
+          <li class="day"><div class="top"><span class="daynum">GÜN 02</span></div><span class="esma">YA HALÎM</span><p class="ttl">Acele Etmeyen Kalp</p></li>
+          <li class="day"><div class="top"><span class="daynum">GÜN 03</span></div><span class="esma">YA LATÎF</span><p class="ttl">İnceliğin Dili</p></li>
+          <li class="day"><div class="top"><span class="daynum">GÜN 04</span></div><span class="esma">YA MÜ'MİN</span><p class="ttl">Güvenli Liman</p></li>
+          <li class="day"><div class="top"><span class="daynum">GÜN 05</span></div><span class="esma">YA VEKÎL</span><p class="ttl">Yükü Bırakabilme</p></li>
+          <li class="day"><div class="top"><span class="daynum">GÜN 06</span></div><span class="esma">YA KAYYÛM</span><p class="ttl">Gerçek Dayanak</p></li>
+          <li class="day"><div class="top"><span class="daynum">GÜN 07</span></div><span class="esma">YA SELÂM</span><p class="ttl">Haftanın Meyvesi</p></li>
+        </ol>
+      </section>
+
+      <section class="path" aria-labelledby="p2">
+        <div class="phead">
+        <h3 id="p2">7 Günlük Gece Sükûneti ve Uykuya Hazırlık</h3>
+        <p class="psub">Günü teslim edip emniyetle uykuya hazırlanma — bir akşam yolu.</p>
+        </div>
+        <ol class="days">
+          <li class="day"><div class="top"><span class="daynum">GÜN 01</span><span class="chip">ÜCRETSİZ</span></div><span class="esma">YA SELÂM</span><p class="ttl">Selametle Varış</p></li>
+          <li class="day"><div class="top"><span class="daynum">GÜN 02</span></div><span class="esma">YA HAFÎZ</span><p class="ttl">Geceye Emanet</p></li>
+          <li class="day"><div class="top"><span class="daynum">GÜN 03</span></div><span class="esma">YA MÜHEYMİN</span><p class="ttl">Gözetilen Gece</p></li>
+          <li class="day"><div class="top"><span class="daynum">GÜN 04</span></div><span class="esma">YA VEKÎL</span><p class="ttl">Yarını Teslim Etmek</p></li>
+          <li class="day"><div class="top"><span class="daynum">GÜN 05</span></div><span class="esma">YA RAHMAN</span><p class="ttl">Merhametle Örtülmek</p></li>
+          <li class="day"><div class="top"><span class="daynum">GÜN 06</span></div><span class="esma">YA LATÎF</span><p class="ttl">Gecenin İnceliği</p></li>
+          <li class="day"><div class="top"><span class="daynum">GÜN 07</span></div><span class="esma">YA SELÂM</span><p class="ttl">Haftayı Mühürlemek</p></li>
+        </ol>
+        <p class="pnote">Bu çalışma uyku bozukluğu tedavisi değildir. Uzun süren uykusuzluk, nefes problemi veya gündüz işlev kaybında bir sağlık profesyoneline başvurulmalıdır.</p>
+      </section>
+
+      <section class="path" aria-labelledby="p3">
+        <div class="phead">
+        <h3 id="p3">7 Günlük Öz Değer</h3>
+        <p class="psub">Değersizlik hissinden, ikram edilmiş içsel asalete doğru bir yol.</p>
+        <p class="pframe">Bu yolda değer kazanılan değil, ikram edilen bir şey olarak konuşulur.</p>
+        </div>
+        <ol class="days">
+          <li class="day"><div class="top"><span class="daynum">GÜN 01</span><span class="chip">ÜCRETSİZ</span></div><span class="esma">YA KERÎM</span><p class="ttl">İkram Edilmiş Değer</p></li>
+          <li class="day"><div class="top"><span class="daynum">GÜN 02</span></div><span class="esma">YA VEDÛD</span><p class="ttl">Sevilmeye Layık</p></li>
+          <li class="day"><div class="top"><span class="daynum">GÜN 03</span></div><span class="esma">YA MU'İZZ</span><p class="ttl">Onaydan Özgürleşmek</p></li>
+          <li class="day"><div class="top"><span class="daynum">GÜN 04</span></div><span class="esma">YA ŞEKÛR</span><p class="ttl">Görülen Küçük Emek</p></li>
+          <li class="day"><div class="top"><span class="daynum">GÜN 05</span></div><span class="esma">YA RAÛF</span><p class="ttl">Yumuşayan İç Ses</p></li>
+          <li class="day"><div class="top"><span class="daynum">GÜN 06</span></div><span class="esma">YA CELÎL</span><p class="ttl">Vakarla Durmak</p></li>
+          <li class="day"><div class="top"><span class="daynum">GÜN 07</span></div><span class="esma">YA KERÎM</span><p class="ttl">Dönüş: İkramla Yaşamak</p></li>
+        </ol>
+      </section>
+    </div>
+
+    <div class="measure">
+      <p class="mi">Üç yol · yirmi bir gün · her gün için ayrı kayıt · kırk iki kayıt (Türkçe ve İngilizce) · toplam 4 saat 23 dakika.</p>
+      <p class="emph">Her yolun 1. günü herkese açık — yani indirir indirmez üç tam gün yürüyebilirsin.</p>
+    </div>
+
+    <!-- 5 · BİR GÜN NASIL GEÇER -->
+    <div class="sub day-grid">
+    <div>
+      <p class="over">SÜKÛNET · GÜN 01</p>
+      <h2>Bir gün nasıl geçer</h2>
+      <p style="margin-top:20px">Aşağıdaki, Sükûnet yolunun 1. günü — uygulamadaki hâliyle, kelimesi kelimesine. Bu gün herkese açık.</p>
+      <p style="margin-top:24px"><span class="esma">YA SELÂM</span> &nbsp;·&nbsp; <strong>Varış: Selamet</strong></p>
+      <blockquote class="quote">Bu hafta kaygılı kalpten sükûnete doğru bir yol açılıyor. YA SELÂM, dağılan endişelerin ortasında kalbe bir emniyet hissini hatırlatır; deniz gibi, yatışma dalga dalga gelebilir.</blockquote>
+      <ol class="steps">
+        <li><h3>Bir dakika nefes</h3><p>Dört saniye al, iki saniye tut, dört saniye ver. Yukarıda denediğin ritmin aynısı.</p></li>
+        <li><h3>Zikir</h3><p>Bugünün ritmi 33. Dokunmatik daire, hafif bir titreşim ve uygulamaya gömülü bir çan sesi — internet gerekmez.</p></li>
+        <li><h3>Güne özel sesli eşlik</h3><p>Yirmi bir günün her birinin kendi kaydı var; Türkçe ve İngilizce ayrı seslendirildi.</p></li>
+        <li><h3>Tefekkür sorusu</h3><p>Kalbin bugün en çok hangi anda kendini emniyette hissediyor, hangi anda tetikte kalıyor?</p></li>
+        <li><h3>Küçük adım</h3><p>İstersen bugün birkaç dakika nefesini 4 sayıda al, 6 sayıda ver ritmine getir; çeneni gevşet ve bedenindeki gerilim noktalarını yumuşat.</p></li>
+      </ol>
+    </div>
+    <div class="figw">
+      <div class="phone"><img src="/assets/04-journey-day-tr-620.webp" srcset="/assets/04-journey-day-tr-620.webp 620w, /assets/04-journey-day-tr-900.webp 900w" sizes="(min-width:900px) 300px, 56vw" width="620" height="1348" alt="Deruni yolculuk günü ekranı: YA SELÂM, beş adım ve tefekkür sorusu" loading="lazy" decoding="async"></div>
+      <p class="cap">Ekran: 7 Günlük Sükûnet, 1. gün</p>
+    </div>
+    </div>
   </div>
+</section>
 
-  <div class="footer">
-    <p>Deruni &copy; 2026 &middot; <a href="mailto:iletisimderuni@gmail.com">iletisimderuni@gmail.com</a></p>
+<!-- 8 · NE ÜCRETSİZ, NE DEĞİL -->
+<section class="rv band">
+  <div class="wrap">
+    <h2 style="text-align:center;margin-bottom:40px">Ne ücretsiz, ne değil</h2>
+    <div class="ledger">
+      <div class="led free">
+        <h3>Ücretsiz</h3>
+        <p class="top">Ücretsiz katman gerçekten iş görür: zikir, nefes, Esma kütüphanesi, 16 ilahi, bir sesli tefekkür, her yolun 1. günü ve günde bir tavsiye.</p>
+        <ul>
+          <li>Zikir</li>
+          <li>1 Dakika Nefes</li>
+          <li>Esma Kütüphanesi'nin tamamı</li>
+          <li>On altı ilahi (55 dakika 17 saniye)</li>
+          <li>&#8220;Kalbe Dönüş&#8221; sesli tefekkürü</li>
+          <li>Üç yolun da 1. günü</li>
+          <li>Günde bir Manevi Tavsiye</li>
+        </ul>
+        <p class="mi" style="margin-top:18px">Ücretsiz katmanda reklam yok — çünkü reklam olsaydı seni takip etmemiz gerekirdi.</p>
+      </div>
+      <div class="led">
+        <h3>Premium</h3>
+        <p class="top">Aboneliğin açtığı dört şey — hepsi uygulamada karşılığı olan özellikler.</p>
+        <ul>
+          <li><b>Deruni Yolculukları</b><span>7 günlük Esma yolculuklarının tamamı — her yolun 1. günü herkese açık.</span></li>
+          <li><b>Sınırsız Tavsiye</b><span>Günlük limit olmadan, kalbin her daraldığında yeni bir Esma tavsiyesi al.</span></li>
+          <li><b>Tüm Sesli Tefekkürler</b><span>12 rehberli tefekkürün tamamı.</span></li>
+          <li><b>Derin &amp; Gece Seansları</b><span>Uykuya hazırlık, gece huzuru ve derin tefekkür seansları.</span></li>
+        </ul>
+      </div>
+    </div>
+    <p class="mi" style="max-width:70ch;margin:28px auto 0;text-align:center">Fiyat bulunduğun ülkeye göre değişir ve mağazada görünür. Abonelik yönetimi App Store ya da Google Play hesabından yapılır. Deneme süresi sayacı, geri sayım ya da &#8220;son X saat&#8221; uyarısı yok.</p>
+    <div class="btns" style="justify-content:center;margin-top:28px">
+      <a class="btn btn-p" href="https://apps.apple.com/tr/app/deruni/id6759687639">Ücretsiz indir ve 1. günden başla</a>
+    </div>
+
+    <!-- 8b · SSS -->
+    <div class="sub" id="sss">
+    <h2 style="text-align:center;margin-bottom:36px">Sık sorulanlar</h2>
+    <div class="faqs">
+      <details class="faq">
+        <summary><h3>Deruni ücretsiz mi?</h3></summary>
+        <p>Evet. Zikir, 1 Dakika Nefes, Esma Kütüphanesi&#x27;nin tamamı, on altı ilahinin tamamı, bir sesli tefekkür, üç yolun da 1. günü ve günde bir Manevi Tavsiye ücretsizdir. Premium aboneliği yolculukların tamamını, on iki sesli tefekkürü ve sınırsız tavsiyeyi açar. Fiyat bulunduğun ülkeye göre değişir ve mağazada görünür.</p>
+      </details>
+      <details class="faq">
+        <summary><h3>Hesap açmam gerekiyor mu, verilerim nereye gidiyor?</h3></summary>
+        <p>Hesap yok, kayıt yok, giriş yok; bir e-posta bile sorulmaz. Tüm veriler varsayılan olarak yalnızca cihazında saklanır. Anonim kullanım verisi varsayılan olarak kapalıdır ve istediğin zaman tüm verilerini dışa aktarabilir ya da silebilirsin.</p>
+      </details>
+      <details class="faq">
+        <summary><h3>İnternet olmadan çalışır mı?</h3></summary>
+        <p>Zikir, nefes ve on iki sesli tefekkür uygulamanın içinde gömülü olduğu için internetsiz çalışır. Yolculuk günlerinin sesli eşlikleri ve ilahiler ilk dinlemede indirilir; indirdikten sonra onlar da çevrimdışı açılır.</p>
+      </details>
+      <details class="faq">
+        <summary><h3>Deruni tıbbi ya da psikolojik bir uygulama mı?</h3></summary>
+        <p>Hayır. Deruni tıbbi tedavi veya psikolojik terapi yerine geçmez. İçerikler manevi destek ve kişisel farkındalık amacı taşır; herhangi bir hastalığı teşhis etme, tedavi etme veya önleme iddiası taşımaz. Ciddi bir zorlanma yaşıyorsan bir sağlık uzmanına başvur; acil durumda 112.</p>
+      </details>
+      <details class="faq">
+        <summary><h3>Deruni Yolculuk nedir, nereden başlarım?</h3></summary>
+        <p>Her biri yedi gün süren üç yol var: Sükûnet, Gece Sükûneti ve Uykuya Hazırlık, Öz Değer. Toplam yirmi bir gün. Her gün bir Esma etrafında bir dakika nefes, zikir, güne özel bir sesli eşlik, bir tefekkür sorusu ve küçük bir adım birleşir. Her yolun 1. günü herkese açıktır, yani indirir indirmez üç tam gün yürüyebilirsin.</p>
+      </details>
+      <details class="faq">
+        <summary><h3>İlahileri nereden dinleyebilirim?</h3></summary>
+        <p>On altı ilahinin tamamı uygulamanın İlahiler bölümünde ücretsizdir. Bu sayfadan da hiçbir şey indirmeden dinleyebilirsin. Yayınlar ayrıca Spotify, Apple Music ve YouTube üzerinden sürüyor.</p>
+      </details>
+      <details class="faq">
+        <summary><h3>Hangi dillerde kullanılabiliyor?</h3></summary>
+        <p>Uygulama arayüzü Türkçe ve İngilizcedir; sesli tefekkürler ve yolculuk kayıtları iki dilde de ayrı ayrı seslendirilmiştir. İlahiler Türkçe, İngilizce ve Arapça olarak bulunur.</p>
+      </details>
+      <details class="faq">
+        <summary><h3>Hangi cihazlarda çalışıyor?</h3></summary>
+        <p>iOS ve Android. App Store ve Google Play üzerinden ücretsiz indirilir.</p>
+      </details>
+    </div>
+    </div>
   </div>
+</section>
 
-  <script>
-    var i18n = {
-      en: {
-        title: 'Deruni — Return to Your Heart',
-        tagline: 'Return to Your Heart',
-        taglineSub: 'Kalbine Dönüş'
-      },
-      tr: {
-        title: 'Deruni — Kalbine Dönüş',
-        tagline: 'Kalbine Dönüş',
-        taglineSub: 'Return to Your Heart'
-      }
+<!-- 9 · SINIR -->
+<section class="scope" id="sinir">
+  <div class="wrap">
+    <p class="lbl">SINIR</p>
+    <p>Deruni tıbbi tedavi veya psikolojik terapi yerine geçmez. İçerikler manevi destek ve kişisel farkındalık amacı taşır; herhangi bir hastalığı teşhis etme, tedavi etme veya önleme iddiası taşımaz. Ciddi duygusal ya da psikolojik zorlanma yaşıyorsan bir sağlık uzmanına başvur.</p>
+    <p class="em">Acil durumda 112.</p>
+  </div>
+</section>
+
+<!-- 11 · KAPANIŞ -->
+<section class="close rv">
+  <div class="wrap">
+    <h2>Kalbine dön.</h2>
+    <p class="lead" style="margin:0 auto">Yirmi bir günün tamamını gördün. Üç yolun 1. günü seni bekliyor.</p>
+    <p class="mi" style="margin-top:18px">Ücretsiz · iOS ve Android · Hesap gerekmez</p>
+    <div class="btns">
+      <a class="btn btn-p" href="https://apps.apple.com/tr/app/deruni/id6759687639">App Store'dan indir</a>
+      <a class="btn btn-s" href="https://play.google.com/store/apps/details?id=com.mehmetcolak.deruni&hl=tr">Google Play'den indir</a>
+    </div>
+    <p class="mi" style="max-width:62ch">Kayıt yok, e-posta yok, geri sayım yok. İndir, aç, bir dakika nefes al. Sana iyi gelmezse silersin — arkanda ne bir hesap kalır ne bir kayıt.</p>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div class="fcol">
+        <p class="fh">DERUNİ</p>
+        <p class="mu" style="max-width:28ch">Kalbine Dönüş. iOS ve Android için ücretsiz.</p>
+      </div>
+      <div class="fcol">
+        <p class="fh">BİLGİ</p>
+        <a href="/privacy.html?lang=tr">Gizlilik Politikası</a>
+        <a href="/terms.html?lang=tr">Kullanım Koşulları</a>
+        <a href="/kvkk.html?lang=tr">KVKK Aydınlatma Metni</a>
+        <a href="mailto:iletisimderuni@gmail.com">iletisimderuni@gmail.com</a>
+      </div>
+      <div class="fcol">
+        <p class="fh">DERÛNÎ</p>
+        <a href="https://www.youtube.com/@Deruniapp" rel="noopener">YouTube</a>
+        <a href="https://www.instagram.com/deruniapp/" rel="noopener">Instagram</a>
+        <a href="https://www.tiktok.com/@deruniapp" rel="noopener">TikTok</a>
+        <a href="https://open.spotify.com/artist/2QThTToZzGgTAy8RZBFgSx" rel="noopener">Spotify</a>
+        <a href="https://music.apple.com/tr/artist/der%C3%BBn%C3%AE/6803085837?l=tr" rel="noopener">Apple Music</a>
+      </div>
+    </div>
+    <div class="fbot">
+      <p>Deruni tıbbi tedavi veya psikolojik terapi yerine geçmez. Acil durumda 112.</p>
+      <p>Deruni © 2026 · <a href="/" style="color:inherit">Türkçe</a> | <a href="/en/" style="color:inherit" hreflang="en">English</a></p>
+    </div>
+  </div>
+</footer>
+
+<div class="bar" id="bar">
+  <div class="wrap">
+    <div class="lt">
+      <span class="idle">Deruni · ücretsiz</span>
+      <span class="np">
+        <button class="iconbtn" id="npBtn" type="button" aria-label="Duraklat / çal"></button>
+        <span class="t" id="npT"></span>
+        <span class="tm" id="npTime"></span>
+        <button class="iconbtn" id="npX" type="button" aria-label="Çalmayı kapat">✕</button>
+      </span>
+    </div>
+    <div class="btns" style="margin:0">
+      <a class="btn btn-p" href="https://apps.apple.com/tr/app/deruni/id6759687639">App Store</a>
+      <a class="btn btn-s" href="https://play.google.com/store/apps/details?id=com.mehmetcolak.deruni&hl=tr">Google Play</a>
+    </div>
+  </div>
+</div>
+
+<audio id="p" preload="none" playsinline></audio>
+
+<script>
+(function(){
+  "use strict";
+  var L = document.documentElement.lang === "en" ? "en" : "tr";
+  var T = L === "en"
+    ? {inhale:"In",hold:"Hold",exhale:"Out",begin:"Begin",stop:"Stop",play:"play",pause:"pause",err:"Could not load right now.",of:"of"}
+    : {inhale:"Al",hold:"Tut",exhale:"Ver",begin:"Başlat",stop:"Durdur",play:"çal",pause:"duraklat",err:"Şu an yüklenemedi.",of:"/"};
+
+  /* ---- 1. Yayınlanmış #tr / #en bağlantıları (YouTube kanalı, TikTok açıklamaları) ----
+     Aynı belgede hash değişimi sayfayı yeniden yüklemez; bu yüzden hashchange de dinlenir. */
+  var routeHash = function(){
+    if (L === "tr" && location.hash === "#en") { location.replace("/en/"); return true; }
+    if (L === "en" && location.hash === "#tr") { location.replace("/"); return true; }
+    return false;
+  };
+  window.addEventListener("hashchange", routeHash);
+  if (routeHash()) return;
+
+  var $ = function(s,r){ return (r||document).querySelector(s); };
+  var $$ = function(s,r){ return Array.prototype.slice.call((r||document).querySelectorAll(s)); };
+  var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  /* ---- 2. Bölüm girişi ---- */
+  var rv = $$(".rv");
+  if (reduce || !("IntersectionObserver" in window)) {
+    rv.forEach(function(e){ e.classList.add("vis"); });
+    $$(".path").forEach(function(e){ e.classList.add("vis"); });
+  } else {
+    var ioFired = false;
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(en){ if(en.isIntersecting){ ioFired = true; en.target.classList.add("vis"); io.unobserve(en.target); } });
+    }, {threshold:0, rootMargin:"0px 0px -8% 0px"});
+    rv.forEach(function(e){ io.observe(e); });
+    /* Emniyet ağı: gözlemci hiç ateşlemediyse sayfa boş kalmasın. Ateşlediyse dokunma. */
+    setTimeout(function(){
+      if (ioFired) return;
+      rv.forEach(function(e){ e.classList.add("vis"); });
+      $$(".path").forEach(function(e){ e.classList.add("vis"); });
+    }, 2500);
+    var io2 = new IntersectionObserver(function(es){
+      es.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add("vis"); io2.unobserve(en.target); } });
+    }, {threshold:0, rootMargin:"0px 0px -8% 0px"});
+    $$(".path").forEach(function(e){ io2.observe(e); });
+  }
+
+  /* ---- 3. Nefes: 4 sn al · 2 sn tut · 4 sn ver, 60 saniye ---- */
+  var ring = $("#ring"), phase = $("#phase"), count = $("#count"), bBtn = $("#bBtn"), bDone = $("#bDone");
+  if (ring && bBtn) {
+    var timer = null, left = 60, running = false;
+    var setPhase = function(sec){
+      var p = (60 - sec) % 10;
+      phase.textContent = p < 4 ? T.inhale : (p < 6 ? T.hold : T.exhale);
     };
+    var fmt = function(s){ return Math.floor(s / 60) + ":" + ("0" + (s % 60)).slice(-2); };
+    var stop = function(fin){
+      running = false; clearInterval(timer); timer = null;
+      ring.classList.remove("run"); bBtn.textContent = T.begin;
+      phase.textContent = "1:00"; count.textContent = "";
+      if (fin) { bDone.hidden = false; }
+    };
+    bBtn.addEventListener("click", function(){
+      if (running) { stop(false); return; }
+      running = true; left = 60; bDone.hidden = true;
+      bBtn.textContent = T.stop;
+      if (!reduce) ring.classList.add("run");
+      setPhase(left); count.textContent = fmt(left);
+      timer = setInterval(function(){
+        left--;
+        if (left <= 0) { stop(true); return; }
+        setPhase(left); count.textContent = fmt(left);
+      }, 1000);
+    });
+    window.addEventListener("pagehide", function(){ if (running) stop(false); });
+  }
 
-    function setLang(lang) {
-      var data = i18n[lang];
-      document.documentElement.lang = lang;
-      document.title = data.title;
-      document.getElementById('tagline').textContent = data.tagline;
-      document.getElementById('tagline-sub').textContent = data.taglineSub;
-
-      document.querySelectorAll('[data-' + lang + ']').forEach(function (el) {
-        el.textContent = el.getAttribute('data-' + lang);
+  /* ---- 4. Dil sekmeleri (ilahiler) ---- */
+  var tabs = $$(".tab");
+  var showLang = function(lang){
+    tabs.forEach(function(t){ t.setAttribute("aria-pressed", String(t.dataset.lang === lang)); });
+    $$("[data-tlang]").forEach(function(r){ r.hidden = r.dataset.tlang !== lang; });
+    $$(".fam").forEach(function(f){
+      var any = $$("[data-tlang]", f).some(function(r){ return !r.hidden; });
+      f.hidden = !any;
+    });
+  };
+  if (tabs.length) {
+    tabs.forEach(function(t, i){
+      t.addEventListener("click", function(){ showLang(t.dataset.lang); });
+      t.addEventListener("keydown", function(e){
+        var d = e.key === "ArrowRight" ? 1 : (e.key === "ArrowLeft" ? -1 : 0);
+        if (!d) return;
+        e.preventDefault();
+        var n = tabs[(i + d + tabs.length) % tabs.length];
+        n.focus(); showLang(n.dataset.lang);
       });
+    });
+    showLang(L === "en" ? "en" : "tr");
+  }
 
-      document.querySelectorAll('.lang-tab').forEach(function (tab) {
-        tab.classList.toggle('active', tab.getAttribute('data-lang') === lang);
+  /* ---- 5. Çalar: tek <audio>, preload=none, otomatik başlama yok ---- */
+  var au = $("#p"), bar = $("#bar"), npT = $("#npT"), npTime = $("#npTime"), npBtn = $("#npBtn"), npX = $("#npX");
+  var status = $("#trkStatus");
+  var cur = null, gen = 0;
+  var ICON_PLAY = '<svg width="11" height="12" viewBox="0 0 11 12" aria-hidden="true"><path d="M1 1v10l9-5z" fill="currentColor"/></svg>';
+  var ICON_PAUSE = '<svg width="10" height="12" viewBox="0 0 10 12" aria-hidden="true"><rect x="0" y="0" width="3" height="12" fill="currentColor"/><rect x="7" y="0" width="3" height="12" fill="currentColor"/></svg>';
+  var mmss = function(s){ s = Math.max(0, Math.floor(s||0)); return Math.floor(s/60) + ":" + ("0" + (s%60)).slice(-2); };
+
+  var resetRow = function(r){
+    if (!r) return;
+    r.classList.remove("load");
+    r.classList.remove("err");
+    $(".pb", r).innerHTML = ICON_PLAY;
+    $(".prog", r).style.transform = "scaleX(0)";
+    r.setAttribute("aria-pressed", "false");
+    var tl = $(".tl", r);                       /* hata metni dil etiketini ezmişse geri al */
+    if (tl && r.dataset.tl) tl.textContent = r.dataset.tl;
+  };
+
+  if (au) {
+    $$(".trk").forEach(function(r){
+      $(".pb", r).innerHTML = ICON_PLAY;
+      var tl0 = $(".tl", r);
+      if (tl0) r.dataset.tl = tl0.textContent;   /* özgün dil etiketini sakla */
+      r.addEventListener("click", function(){
+        if (cur === r) {
+          if (au.paused) { au.play().catch(function(){}); } else { au.pause(); }
+          return;
+        }
+        resetRow(cur);
+        cur = r;
+        var my = ++gen;                          /* eskimiş play() reddini yok saymak için nesil */
+        r.classList.add("load");
+        resetRow(r);
+        r.classList.add("load");
+        au.src = r.dataset.src;
+        au.play().catch(function(err){
+          if (my !== gen) return;                /* kullanıcı bu arada başka satıra bastı */
+          if (err && err.name === "AbortError") return;
+          r.classList.remove("load");
+          r.classList.add("err");
+          var tl = $(".tl", r); if (tl) tl.textContent = T.err;
+          if (status) status.textContent = r.dataset.title + " — " + T.err;
+          cur = null;
+          if (bar) bar.classList.remove("play");
+        });
+        if (npT) npT.textContent = r.dataset.title + " · Derûnî";
+        if (bar) { bar.classList.add("play"); bar.classList.add("on"); }
+        if ("mediaSession" in navigator) {
+          try {
+            navigator.mediaSession.metadata = new MediaMetadata({
+              title: r.dataset.title, artist: "Derûnî", album: "Derûnî İlahileri",
+              artwork: [{ src: "/assets/logo-256.webp", sizes: "256x256", type: "image/webp" }]
+            });
+          } catch (e) {}
+        }
       });
+    });
 
-      try { history.replaceState(null, '', '#' + lang); } catch (e) { }
+    au.addEventListener("playing", function(){
+      if (!cur) return;
+      cur.classList.remove("load");
+      $(".pb", cur).innerHTML = ICON_PAUSE;
+      cur.setAttribute("aria-pressed", "true");
+      if (npBtn) { npBtn.innerHTML = ICON_PAUSE; npBtn.setAttribute("aria-pressed", "true"); }
+    });
+    au.addEventListener("pause", function(){
+      if (cur) { $(".pb", cur).innerHTML = ICON_PLAY; cur.setAttribute("aria-pressed", "false"); }
+      if (npBtn) { npBtn.innerHTML = ICON_PLAY; npBtn.setAttribute("aria-pressed", "false"); }
+    });
+    au.addEventListener("timeupdate", function(){
+      if (!cur || !au.duration) return;
+      $(".prog", cur).style.transform = "scaleX(" + (au.currentTime / au.duration) + ")";
+      if (npTime) npTime.textContent = mmss(au.currentTime) + " / " + mmss(au.duration);
+    });
+    au.addEventListener("ended", function(){
+      resetRow(cur); cur = null;
+      if (bar) { bar.classList.remove("play"); if (window.syncBar) window.syncBar(); }
+    });
+    if (npBtn) npBtn.addEventListener("click", function(){ if (au.paused) { au.play().catch(function(){}); } else { au.pause(); } });
+    if (npX) npX.addEventListener("click", function(){
+      au.pause(); au.removeAttribute("src"); au.load();
+      resetRow(cur); cur = null; gen++;
+      /* src kaldirilinca pause olayi gelmeyebiliyor; serit dugmesini acikca sifirla */
+      if (npBtn) { npBtn.innerHTML = ICON_PLAY; npBtn.setAttribute("aria-pressed", "false"); }
+      if (bar) { bar.classList.remove("play"); if (window.syncBar) window.syncBar(); }
+    });
+    window.addEventListener("pagehide", function(){ au.pause(); });
+  }
+
+  /* ---- 6. Alt şerit ---- */
+  var hero = $("#hero");
+  var heroVisible = true;
+  window.syncBar = function(){
+    if (!bar) return;
+    bar.classList.toggle("on", !heroVisible || bar.classList.contains("play"));
+  };
+  if (bar && hero) {
+    if ("IntersectionObserver" in window) {
+      new IntersectionObserver(function(es){
+        es.forEach(function(en){ heroVisible = en.isIntersecting; });
+        window.syncBar();
+      }, {threshold:0}).observe(hero);
+    } else {
+      heroVisible = false;
+      window.syncBar();
     }
-
-    (function () {
-      var hash = location.hash.replace('#', '');
-      if (hash === 'tr' || hash === 'en') { setLang(hash); return; }
-      var browserLang = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
-      setLang(browserLang.startsWith('tr') ? 'tr' : 'en');
-    })();
-  </script>
-
+  }
+})();
+</script>
 </body>
-
 </html>

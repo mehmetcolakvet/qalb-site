@@ -1,0 +1,8 @@
+# Kaynak dosyalar — index.html ve en/index.html bunlardan build.py ile üretilir.
+_style.css
+_app.js
+_body.tr.html
+_body.en.html
+_manifest.cache.json
+build.py
+README.md
