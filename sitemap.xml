@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://deruni.app/</loc>
+    <lastmod>2026-09-04</lastmod>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://deruni.app/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://deruni.app/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://deruni.app/"/>
+  </url>
+  <url>
+    <loc>https://deruni.app/en/</loc>
+    <lastmod>2026-09-04</lastmod>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://deruni.app/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://deruni.app/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://deruni.app/"/>
+  </url>
+  <url><loc>https://deruni.app/privacy.html</loc><lastmod>2026-02-23</lastmod></url>
+  <url><loc>https://deruni.app/terms.html</loc><lastmod>2026-02-23</lastmod></url>
+  <url><loc>https://deruni.app/kvkk.html</loc><lastmod>2026-02-23</lastmod></url>
+</urlset>

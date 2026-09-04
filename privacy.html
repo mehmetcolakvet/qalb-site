@@ -7,12 +7,12 @@
   <title>Deruni – Privacy Policy</title>
   <style>
     :root {
-      --bg: #0A1628;
-      --card: #111D30;
-      --gold: #C9A84C;
-      --text: #E8E4DC;
-      --muted: #8A9AB5;
-      --border: rgba(255, 255, 255, 0.08);
+      --bg: #0B1E39;
+      --card: #111A30;
+      --gold: #C2A878;
+      --text: #F4EFE6;
+      --muted: #B8C4D8;
+      --border: #1F2942;
     }
 
     * {
@@ -298,7 +298,17 @@
       document.getElementById('btn-en').style.opacity = lang === 'en' ? '1' : '0.5';
       document.getElementById('btn-tr').style.opacity = lang === 'tr' ? '1' : '0.5';
     }
-    switchLang('en');
+    /* Dil seçimi: ?lang= ya da #tr/#en, yoksa tarayıcı dili, yoksa varsayılan.
+       Ana sayfanın alt bilgisi buraya ?lang= ile bağlanır. */
+    (function () {
+      var q = new URLSearchParams(location.search).get('lang')
+              || location.hash.replace('#', '');
+      if (q !== 'tr' && q !== 'en') {
+        q = (navigator.language || '').toLowerCase().indexOf('tr') === 0 ? 'tr' : 'en';
+      }
+      switchLang(q);
+      document.documentElement.lang = q;
+    })();
   </script>
 </body>
 
