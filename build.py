@@ -111,7 +111,7 @@ def build_faq(page: str) -> str:
     rows = []
     for i, (q, a) in enumerate(FAQ[page]):
         rows.append(
-            f'      <details class="faq"{" open" if i == 0 else ""}>\n'
+            f'      <details class="faq">\n'
             f'        <summary><h3>{html.escape(q)}</h3></summary>\n'
             f'        <p>{html.escape(a)}</p>\n'
             f'      </details>'

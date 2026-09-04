@@ -122,7 +122,7 @@
       if (tl0) r.dataset.tl = tl0.textContent;   /* özgün dil etiketini sakla */
       r.addEventListener("click", function(){
         if (cur === r) {
-          if (au.paused) { au.play(); } else { au.pause(); }
+          if (au.paused) { au.play().catch(function(){}); } else { au.pause(); }
           return;
         }
         resetRow(cur);
@@ -175,10 +175,12 @@
       resetRow(cur); cur = null;
       if (bar) { bar.classList.remove("play"); if (window.syncBar) window.syncBar(); }
     });
-    if (npBtn) npBtn.addEventListener("click", function(){ if (au.paused) { au.play(); } else { au.pause(); } });
+    if (npBtn) npBtn.addEventListener("click", function(){ if (au.paused) { au.play().catch(function(){}); } else { au.pause(); } });
     if (npX) npX.addEventListener("click", function(){
       au.pause(); au.removeAttribute("src"); au.load();
       resetRow(cur); cur = null; gen++;
+      /* src kaldirilinca pause olayi gelmeyebiliyor; serit dugmesini acikca sifirla */
+      if (npBtn) { npBtn.innerHTML = ICON_PLAY; npBtn.setAttribute("aria-pressed", "false"); }
       if (bar) { bar.classList.remove("play"); if (window.syncBar) window.syncBar(); }
     });
     window.addEventListener("pagehide", function(){ au.pause(); });
