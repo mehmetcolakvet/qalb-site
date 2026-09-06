@@ -17,7 +17,18 @@
       "has": [
         {
           "type": "host",
-          "value": "(www\\.)?qalb\\.app"
+          "value": "qalb.app"
+        }
+      ],
+      "destination": "https://deruni.app/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.qalb.app"
         }
       ],
       "destination": "https://deruni.app/:path*",
